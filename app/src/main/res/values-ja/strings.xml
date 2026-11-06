@@ -18,7 +18,7 @@
   -->
 
 <resources>
-    <string name="app_name">MoneyWallet</string>
+    <string name="app_name">RabbitWallet</string>
 
     <string name="menu_transaction">"取引"</string>
     <string name="menu_category">"カテゴリ"</string>

@@ -5,10 +5,10 @@
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" 
       alt="Download from Google Play" 
-      height="80">](https://play.google.com/store/apps/details?id=com.oriondev.moneywallet)
+      height="80">](https://play.google.com/store/apps/details?id=com.amesingularity.rabbitwallet)
 [<img src="https://f-droid.org/badge/get-it-on.png"
       alt="Get it on F-Droid"
-      height="80">](https://f-droid.org/en/packages/com.oriondev.moneywallet)
+      height="80">](https://f-droid.org/en/packages/com.amesingularity.rabbitwallet)
       
 ![Showcase](https://github.com/AndreAle94/moneywallet/raw/master/pictures/showcase.png)
 

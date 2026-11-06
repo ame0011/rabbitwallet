@@ -2,7 +2,7 @@
 ~ translated by haneefi
 -->
 <resources>
-    <string name="app_name">മണി വാലറ്റ്</string>
+    <string name="app_name">RabbitWallet</string>
 
     <string name="menu_transaction">"ഇടപാടുകൾ"</string>
     <string name="menu_category">"വിഭാഗങ്ങൾ"</string>

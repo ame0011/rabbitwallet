@@ -18,7 +18,7 @@
   -->
 
 <resources>
-    <string name="app_name">MoneyWallet</string>
+    <string name="app_name">RabbitWallet</string>
 
     <string name="menu_transaction">"معاملات"</string>
     <string name="menu_category">"دسته بندی‌ها"</string>
