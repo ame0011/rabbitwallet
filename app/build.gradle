@@ -73,6 +73,25 @@ android {
 configurations {
     all {
         exclude module: 'commons-logging'
+        // The FastAdapter artifacts published to JCenter are gone. Swap the whole
+        // FastAdapter family for the upstream build on JitPack. The v3.2.7 classes
+        // are identical to the 3.2.6 ones this project was written against.
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.mikepenz') {
+                switch (details.requested.name) {
+                    case 'fastadapter':
+                    case 'library-core':
+                        details.useTarget 'com.github.mikepenz.FastAdapter:library-core:v3.2.7'
+                        break
+                    case 'library':
+                        details.useTarget 'com.github.mikepenz.FastAdapter:library:v3.2.7'
+                        break
+                    case 'fastadapter-extensions-expandable':
+                        details.useTarget 'com.github.mikepenz.FastAdapter:library-extensions-expandable:v3.2.7'
+                        break
+                }
+            }
+        }
     }
 }
 
@@ -92,6 +111,9 @@ dependencies {
     }
     implementation 'com.pnikosis:materialish-progress:1.7'
     implementation 'com.github.rubensousa:bottomsheetbuilder:1.6.1'
+    // JCenter shutdown: replaced with builds of the upstream sources hosted on JitPack.
+    implementation 'com.github.aritraroy:PinLockView:5079b412c7'
+    implementation 'com.github.aritraroy.PatternLockView:patternlockview:a90b0d4bf'
     implementation('com.philliphsu:bottomsheetpickers:2.4.1') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'design'
@@ -104,8 +126,6 @@ dependencies {
     implementation 'net.lingala.zip4j:zip4j:1.3.2'
     implementation 'com.github.daniel-stoneuk:material-about-library:2.2.4'
     implementation 'com.github.apl-devs:appintro:v4.2.3'
-    implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
-    implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
     implementation 'com.multidots:fingerprint-auth:1.0.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.ronaldsmartin:Material-ViewPagerIndicator:1.0.4'

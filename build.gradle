@@ -23,6 +23,10 @@ buildscript {
     
     repositories {
         google()
+        mavenCentral()
+        // JCenter is shut down: use mirrors that still cache its artifacts.
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
         jcenter()
     }
     dependencies {
@@ -35,6 +39,10 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
+        // JCenter is shut down: use mirrors that still cache its artifacts.
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
         jcenter()
         maven { url 'https://jitpack.io' }
     }
