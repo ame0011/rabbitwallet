@@ -50,6 +50,7 @@ import com.amesingularity.rabbitwallet.storage.database.DataContentProvider;
 import com.amesingularity.rabbitwallet.ui.activity.NewEditItemActivity;
 import com.amesingularity.rabbitwallet.ui.activity.NewEditTransferActivity;
 import com.amesingularity.rabbitwallet.ui.fragment.base.SecondaryPanelFragment;
+import com.amesingularity.rabbitwallet.ui.view.AttachmentActions;
 import com.amesingularity.rabbitwallet.ui.view.AttachmentView;
 import com.amesingularity.rabbitwallet.ui.view.theme.ThemedDialog;
 import com.amesingularity.rabbitwallet.utils.CurrencyManager;
@@ -332,7 +333,7 @@ public class TransferItemFragment extends SecondaryPanelFragment implements Atta
 
     @Override
     public void onAttachmentClick(Attachment attachment) {
-        Attachment.openAttachment(getActivity(), attachment);
+        AttachmentActions.openAttachment(getActivity(), attachment);
     }
 
     @Override

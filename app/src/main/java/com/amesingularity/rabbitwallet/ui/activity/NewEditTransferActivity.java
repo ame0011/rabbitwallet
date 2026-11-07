@@ -19,7 +19,6 @@
 
 package com.amesingularity.rabbitwallet.ui.activity;
 
-import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -56,10 +55,10 @@ import com.amesingularity.rabbitwallet.picker.WalletPicker;
 import com.amesingularity.rabbitwallet.storage.database.Contract;
 import com.amesingularity.rabbitwallet.storage.database.DataContentProvider;
 import com.amesingularity.rabbitwallet.storage.preference.PreferenceManager;
+import com.amesingularity.rabbitwallet.ui.view.AttachmentActions;
 import com.amesingularity.rabbitwallet.ui.view.AttachmentView;
 import com.amesingularity.rabbitwallet.ui.view.text.MaterialEditText;
 import com.amesingularity.rabbitwallet.ui.view.text.Validator;
-import com.amesingularity.rabbitwallet.ui.view.theme.ThemedDialog;
 import com.amesingularity.rabbitwallet.utils.CurrencyManager;
 import com.amesingularity.rabbitwallet.utils.DateFormatter;
 import com.amesingularity.rabbitwallet.utils.DateUtils;
@@ -827,15 +826,7 @@ public class NewEditTransferActivity extends NewEditItemActivity  implements Cur
 
     @Override
     public void onAttachmentClick(Attachment attachment) {
-        try {
-            startActivity(attachment.getActionViewIntent(this));
-        } catch (ActivityNotFoundException e) {
-            ThemedDialog.buildMaterialDialog(this)
-                    .title(R.string.title_error)
-                    .content(R.string.message_error_activity_not_found)
-                    .positiveText(android.R.string.ok)
-                    .show();
-        }
+        AttachmentActions.openAttachment(this, attachment);
     }
 
     @Override

@@ -56,6 +56,7 @@ import com.amesingularity.rabbitwallet.picker.WalletPicker;
 import com.amesingularity.rabbitwallet.storage.database.Contract;
 import com.amesingularity.rabbitwallet.storage.database.DataContentProvider;
 import com.amesingularity.rabbitwallet.storage.preference.PreferenceManager;
+import com.amesingularity.rabbitwallet.ui.view.AttachmentActions;
 import com.amesingularity.rabbitwallet.ui.view.AttachmentView;
 import com.amesingularity.rabbitwallet.ui.view.text.MaterialEditText;
 import com.amesingularity.rabbitwallet.ui.view.text.Validator;
@@ -1069,7 +1070,7 @@ public class NewEditTransactionActivity extends NewEditItemActivity implements M
 
     @Override
     public void onAttachmentClick(Attachment attachment) {
-        Attachment.openAttachment(this, attachment);
+        AttachmentActions.openAttachment(this, attachment);
     }
 
     @Override

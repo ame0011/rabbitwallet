@@ -51,6 +51,7 @@ import com.amesingularity.rabbitwallet.storage.database.SQLiteDataException;
 import com.amesingularity.rabbitwallet.ui.activity.NewEditItemActivity;
 import com.amesingularity.rabbitwallet.ui.activity.NewEditTransactionActivity;
 import com.amesingularity.rabbitwallet.ui.fragment.base.SecondaryPanelFragment;
+import com.amesingularity.rabbitwallet.ui.view.AttachmentActions;
 import com.amesingularity.rabbitwallet.ui.view.AttachmentView;
 import com.amesingularity.rabbitwallet.ui.view.theme.ThemedDialog;
 import com.amesingularity.rabbitwallet.utils.CurrencyManager;
@@ -333,7 +334,7 @@ public class TransactionItemFragment extends SecondaryPanelFragment implements L
 
     @Override
     public void onAttachmentClick(Attachment attachment) {
-        Attachment.openAttachment(getActivity(), attachment);
+        AttachmentActions.openAttachment(getActivity(), attachment);
     }
 
     @Override

@@ -93,7 +93,7 @@ public class AttachmentView extends LinearLayout {
         TextView secondaryTextView = view.findViewById(R.id.secondary_text_view);
         ImageView removeImageView = view.findViewById(R.id.remove_image_view);
         Glide.with(this)
-                .load(Attachment.getIconResByType(attachment.getType()))
+                .load(AttachmentActions.getIconResByType(attachment.getType()))
                 .into(avatarImageView);
         primaryTextView.setText(attachment.getName());
         if (attachment.getStatus() == Attachment.Status.READY) {

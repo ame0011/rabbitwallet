@@ -19,17 +19,12 @@
 
 package com.amesingularity.rabbitwallet.model;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.core.content.FileProvider;
-import android.text.TextUtils;
-
-import com.amesingularity.rabbitwallet.R;
-import com.amesingularity.rabbitwallet.ui.view.theme.ThemedDialog;
 
 import java.io.File;
 import java.util.UUID;
@@ -172,37 +167,5 @@ public class Attachment implements Parcelable, Identifiable {
 
     public static String generateFileUID() {
         return UUID.randomUUID().toString().replaceAll("-", "");
-    }
-
-    public static void openAttachment(Context context, Attachment attachment) {
-        try {
-            context.startActivity(attachment.getActionViewIntent(context));
-        } catch (ActivityNotFoundException e) {
-            ThemedDialog.buildMaterialDialog(context)
-                    .title(R.string.title_error)
-                    .content(R.string.message_error_activity_not_found)
-                    .positiveText(android.R.string.ok)
-                    .show();
-        }
-    }
-
-    public static int getIconResByType(String type) {
-        if (!TextUtils.isEmpty(type)) {
-            switch (type) {
-                case "application/pdf":
-                    return R.drawable.ic_file_pdf_24dp;
-                case "text/plain":
-                    return R.drawable.ic_file_document_24dp;
-                case "image/png":
-                case "image/jpg":
-                case "image/jpeg":
-                case "image/gif":
-                case "image/bmp":
-                    return R.drawable.ic_file_image_24dp;
-                case "video/mp4":
-                    return R.drawable.ic_file_video_24dp;
-            }
-        }
-        return R.drawable.ic_file_outline_24dp;
     }
 }
