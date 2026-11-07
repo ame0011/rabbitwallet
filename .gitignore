@@ -6,3 +6,6 @@
 /build
 /captures
 .externalNativeBuild
+
+# graphify knowledge-graph outputs (anchored + any nested scan-root copy)
+graphify-out/
