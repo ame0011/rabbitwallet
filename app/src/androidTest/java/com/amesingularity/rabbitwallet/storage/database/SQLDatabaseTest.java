@@ -22,10 +22,10 @@ package com.amesingularity.rabbitwallet.storage.database;
 import android.app.Instrumentation;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.test.RenamingDelegatingContext;
-import android.test.suitebuilder.annotation.LargeTest;
 import android.text.TextUtils;
 
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -38,6 +38,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -49,7 +50,6 @@ import static junit.framework.Assert.assertNotNull;
 /**
  * Created by andrea on 28/08/18.
  */
-@LargeTest
 public class SQLDatabaseTest {
 
     private Context mContext;
@@ -59,11 +59,7 @@ public class SQLDatabaseTest {
     public void setUp() {
         Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
         Context baseContext = instrumentation.getTargetContext();
-        mContext = new RenamingDelegatingContext(baseContext, "test.");
-        // load existing databases and files if found
-        if (mContext instanceof RenamingDelegatingContext) {
-            ((RenamingDelegatingContext) mContext).makeExistingFilesAndDbsAccessible();
-        }
+        mContext = new IsolatedContext(baseContext);
         // remove existing database (if any) before starting the test
         mContext.deleteDatabase(SQLDatabase.DATABASE_NAME);
         // create a new database for testing purposes
@@ -75,6 +71,33 @@ public class SQLDatabaseTest {
     public void tearDown() {
         mDatabase.close();
         mContext.deleteDatabase(SQLDatabase.DATABASE_NAME);
+    }
+
+    /**
+     * Keeps every database created by the test inside a dedicated directory so that the real
+     * application database is never touched.
+     */
+    private static class IsolatedContext extends ContextWrapper {
+
+        private final File mDatabaseDir;
+
+        IsolatedContext(Context base) {
+            super(base);
+            mDatabaseDir = new File(base.getCacheDir(), "test-databases");
+        }
+
+        @Override
+        public File getDatabasePath(String name) {
+            if (!mDatabaseDir.exists() && !mDatabaseDir.mkdirs()) {
+                throw new IllegalStateException("Unable to create directory " + mDatabaseDir);
+            }
+            return new File(mDatabaseDir, name);
+        }
+
+        @Override
+        public boolean deleteDatabase(String name) {
+            return SQLiteDatabase.deleteDatabase(getDatabasePath(name));
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////

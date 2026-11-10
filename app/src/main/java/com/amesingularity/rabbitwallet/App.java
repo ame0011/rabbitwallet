@@ -22,8 +22,6 @@ package com.amesingularity.rabbitwallet;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.multidex.MultiDex;
-
 import com.amesingularity.rabbitwallet.broadcast.AutoBackupBroadcastReceiver;
 import com.amesingularity.rabbitwallet.broadcast.DailyBroadcastReceiver;
 import com.amesingularity.rabbitwallet.broadcast.RecurrenceBroadcastReceiver;
@@ -63,7 +61,6 @@ public class App extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        MultiDex.install(this);
         Reflection.unseal(base);
     }
 }

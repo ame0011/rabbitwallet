@@ -19,8 +19,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.amesingularity.rabbitwallet">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
@@ -40,7 +39,9 @@
         android:requestLegacyExternalStorage="true"
         android:fullBackupContent="@xml/backup_rules"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.LauncherActivity">
+        <activity
+            android:name=".ui.activity.LauncherActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -55,7 +56,9 @@
         <activity android:name=".ui.activity.BackupListActivity" />
         <activity android:name=".ui.activity.NewEditCurrencyActivity" />
         <activity android:name=".ui.activity.NewEditWalletActivity" />
-        <activity android:name=".ui.activity.NewEditTransactionActivity">
+        <activity
+            android:name=".ui.activity.NewEditTransactionActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -90,6 +93,7 @@
         <activity android:name=".ui.activity.SearchActivity" />
         <activity android:name=".ui.activity.CalendarActivity" />
         <activity android:name=".ui.activity.MapActivity" />
+        <activity android:name=".ui.activity.PlacePickerActivity" />
         <activity android:name=".ui.activity.PeriodDetailActivity" />
         <activity android:name=".ui.activity.TransactionListActivity" />
         <activity android:name=".ui.activity.LockActivity" />
@@ -132,7 +136,9 @@
         <receiver android:name=".broadcast.RecurrenceBroadcastReceiver" />
         <receiver android:name=".broadcast.AutoBackupBroadcastReceiver" />
         <receiver android:name=".broadcast.NotificationBroadcastReceiver" />
-        <receiver android:name=".broadcast.BootBroadcastReceiver">
+        <receiver
+            android:name=".broadcast.BootBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

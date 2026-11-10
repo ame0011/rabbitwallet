@@ -27,13 +27,10 @@ import com.amesingularity.rabbitwallet.api.disk.DiskBackendService;
 import com.amesingularity.rabbitwallet.api.disk.DiskBackendServiceAPI;
 import com.amesingularity.rabbitwallet.api.dropbox.DropboxBackendService;
 import com.amesingularity.rabbitwallet.api.dropbox.DropboxBackendServiceAPI;
-import com.amesingularity.rabbitwallet.api.google.GoogleDriveBackendService;
-import com.amesingularity.rabbitwallet.api.google.GoogleDriveBackendServiceAPI;
 import com.amesingularity.rabbitwallet.api.saf.SAFBackendService;
 import com.amesingularity.rabbitwallet.api.saf.SAFBackendServiceAPI;
 import com.amesingularity.rabbitwallet.model.BackupService;
 import com.amesingularity.rabbitwallet.model.DropBoxFile;
-import com.amesingularity.rabbitwallet.model.GoogleDriveFile;
 import com.amesingularity.rabbitwallet.model.IFile;
 import com.amesingularity.rabbitwallet.model.LocalFile;
 import com.amesingularity.rabbitwallet.model.SAFFile;
@@ -47,7 +44,6 @@ import java.util.List;
 public class BackendServiceFactory {
 
     public static final String SERVICE_ID_DROPBOX = "dropbox";
-    public static final String SERVICE_ID_GOOGLE_DRIVE = "google_drive";
     public static final String SERVICE_ID_EXTERNAL_MEMORY = "external_memory";
     public static final String SERVICE_ID_SAF = "storage_access_framework";
 
@@ -55,8 +51,6 @@ public class BackendServiceFactory {
         switch (backendId) {
             case SERVICE_ID_DROPBOX:
                 return new DropboxBackendService(listener);
-            case SERVICE_ID_GOOGLE_DRIVE:
-                return new GoogleDriveBackendService(listener);
             case SERVICE_ID_EXTERNAL_MEMORY:
                 return new DiskBackendService(listener);
             case SERVICE_ID_SAF:
@@ -69,8 +63,6 @@ public class BackendServiceFactory {
         switch (backendId) {
             case SERVICE_ID_DROPBOX:
                 return new DropboxBackendServiceAPI(context);
-            case SERVICE_ID_GOOGLE_DRIVE:
-                return new GoogleDriveBackendServiceAPI(context);
             case SERVICE_ID_EXTERNAL_MEMORY:
                 return new DiskBackendServiceAPI();
             case SERVICE_ID_SAF:
@@ -83,7 +75,6 @@ public class BackendServiceFactory {
     public static List<BackupService> getBackupServices() {
         List<BackupService> services = new ArrayList<>();
         services.add(new BackupService(SERVICE_ID_DROPBOX, R.drawable.ic_dropbox_24dp, R.string.service_backup_drop_box));
-        services.add(new BackupService(SERVICE_ID_GOOGLE_DRIVE, R.drawable.ic_google_drive_24dp, R.string.service_backup_google_drive));
         services.add(new BackupService(SERVICE_ID_EXTERNAL_MEMORY, R.drawable.ic_sd_24dp, R.string.service_backup_external_memory));
         if (Build.VERSION.SDK_INT >= 21) {
             services.add(new BackupService(SERVICE_ID_SAF, R.drawable.ic_storage_black_24dp, R.string.service_backup_storage_access_framework));
@@ -96,8 +87,6 @@ public class BackendServiceFactory {
             switch (backendId) {
                 case SERVICE_ID_DROPBOX:
                     return new DropBoxFile(encoded);
-                case SERVICE_ID_GOOGLE_DRIVE:
-                    return new GoogleDriveFile(encoded);
                 case SERVICE_ID_EXTERNAL_MEMORY:
                     return new LocalFile(encoded);
                 case SERVICE_ID_SAF:

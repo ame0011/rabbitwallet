@@ -342,11 +342,9 @@
     <string name="cover_message_backup_storage_access_framework_title">"このアプリは、ドキュメントプロバイダならどこでも(Nextcloud、Dropbox、端末のファイルシステムなど)バックアップの作成と復元ができます"</string>
     <string name="cover_message_backup_external_memory_title">"このアプリは、端末の外部ストレージから直接バックアップの作成と復元ができます"</string>
     <string name="cover_message_backup_dropbox_title">"このアプリは、個人のDropboxアカウントからバックアップの作成と復元ができます"</string>
-    <string name="cover_message_backup_google_drive_title">"このアプリは、個人のGoogle Driveアカウントからバックアップの作成と復元ができます"</string>
     <string name="cover_message_backup_external_memory_button">"続行"</string>
     <string name="cover_message_backup_storage_access_framework_button">"続行"</string>
     <string name="cover_message_backup_dropbox_button">"ログイン"</string>
-    <string name="cover_message_backup_google_drive_button">"ログイン"</string>
 
     <string name="empty_message_secondary_panel">"左側のリストで項目を選択すると詳細が表示されます"</string>
     <string name="empty_message_backup_cover">"バックアップの保存先と取得先のサービスを選択してください"</string>
@@ -388,7 +386,6 @@
     <string name="message_backup_restoring_failed">"バックアップの復元中にエラーが発生しました。メッセージ: %s"</string>
     <string name="message_backup_service_dropbox_disconnect">"Dropboxアカウントの接続を解除しますか?"</string>
     <string name="message_backup_service_storage_access_framework_disconnect">"現在のコンテンツプロバイダの接続を解除しますか?ファイルは削除されません。"</string>
-    <string name="message_backup_service_google_drive_disconnect">"Google Driveアカウントの接続を解除しますか?"</string>
     <string name="message_action_archive_wallet">"このウォレットをアーカイブしますか?メニューには表示されなくなります。"</string>
     <string name="message_action_unarchive_wallet">"このウォレットのアーカイブを解除しますか?メニューに再び表示されるようになります。"</string>
     <string name="message_action_archive_debt">"この負債をアーカイブしますか?"</string>
@@ -452,7 +449,6 @@
     <string name="spinner_item_end_date">"終了:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_google_drive">"Google Drive"</string>
     <string name="service_backup_external_memory">"外部ストレージ"</string>
 
     <string name="setting_title_user_interface">"ユーザーインターフェース"</string>

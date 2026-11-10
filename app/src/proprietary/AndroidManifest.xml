@@ -18,17 +18,20 @@
   ~ along with MoneyWallet.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amesingularity.rabbitwallet">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application>
         <activity
             android:name="com.dropbox.core.android.AuthActivity"
             android:configChanges="orientation|keyboard"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
-                <data android:scheme="db-${DropBoxApiKey}" />
+                <!-- The Dropbox app key is lower case, lint cannot verify the placeholder. -->
+                <data
+                    android:scheme="db-${DropBoxApiKey}"
+                    tools:ignore="AppLinkUrlError" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
