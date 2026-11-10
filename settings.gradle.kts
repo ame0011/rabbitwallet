@@ -17,50 +17,33 @@
  * along with MoneyWallet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
-buildscript {
-    
+pluginManagement {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.13.0'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
 }
 
-allprojects {
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
         // Some dependencies only exist on JitPack.
-        maven { url = uri('https://jitpack.io') }
+        maven("https://jitpack.io")
         // JCenter is shut down. A few artifacts (bottomsheetbuilder, bottomsheetpickers,
         // fingerprint-auth, free_reflection) are only available from this read-only mirror.
         // Remove it once those libraries have been replaced (see the modernization plan, Phase 3).
-        maven { url = uri('https://maven.aliyun.com/repository/public') }
+        maven("https://maven.aliyun.com/repository/public")
     }
 }
 
-ext {
-    versions = [
-            supportLib: "27.1.1"
-    ]
-    supportDependencies = [
-            appcompat : 'androidx.appcompat:appcompat:1.0.0',
-            recyclerview : 'androidx.recyclerview:recyclerview:1.0.0',
-            cardview: 'androidx.cardview:cardview:1.0.0',
-            annotations : 'androidx.annotation:annotation:1.0.0',
-            design : 'com.google.android.material:material:1.0.0',
-            preference: 'androidx.preference:preference:1.0.0',
-            constraintlayout : 'androidx.constraintlayout:constraintlayout:1.1.3'
-    ]
-
+plugins {
+    // Provisions a JDK for the Gradle daemon when the required one is not installed locally.
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.10.0"
 }
 
-task clean(type: Delete) {
-    delete rootProject.layout.buildDirectory
-}
+rootProject.name = "RabbitWallet"
+
+include(":app")

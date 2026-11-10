@@ -1,0 +1,90 @@
+[versions]
+agp = "8.13.0"
+
+androidxActivity = "1.2.0-alpha08"
+androidxAnnotation = "1.0.0"
+androidxAppcompat = "1.0.0"
+androidxCardview = "1.0.0"
+androidxConstraintlayout = "1.1.3"
+androidxFragment = "1.3.0-alpha08"
+androidxPreference = "1.0.0"
+androidxRecyclerview = "1.0.0"
+androidxTestCore = "1.6.1"
+androidxTestRules = "1.6.1"
+androidxTestRunner = "1.6.2"
+androidxTestOrchestrator = "1.5.1"
+
+appintro = "v4.2.3"
+bottomsheetbuilder = "1.6.1"
+bottomsheetpickers = "2.4.1"
+commonsIo = "2.6"
+dropbox = "3.0.8"
+expansionpanel = "1.1.1"
+fingerprintAuth = "1.0.1"
+freeReflection = "2.2.0"
+glide = "4.8.0"
+itext = "5.5.13"
+junit = "4.13.2"
+jxl = "2.6.12"
+libRecur = "0.11.1"
+material = "1.0.0"
+materialAboutLibrary = "2.2.4"
+materialDialogs = "0.9.6.0"
+materialSpinner = "1.2.5"
+materialdrawer = "6.0.8"
+materialishProgress = "1.7"
+mockito = "3.6.28"
+mpandroidchart = "v3.0.3"
+opencsv = "4.4"
+osmdroid = "6.1.1"
+patternlockview = "a90b0d4bf"
+pinlockview = "5079b412c7"
+viewpagerIndicator = "1.0.4"
+zip4j = "1.3.2"
+
+[libraries]
+androidx-activity = { module = "androidx.activity:activity", version.ref = "androidxActivity" }
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidxAnnotation" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "androidxCardview" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidxConstraintlayout" }
+androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "androidxFragment" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "androidxPreference" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidxRecyclerview" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTestCore" }
+androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidxTestRules" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxTestRunner" }
+androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "androidxTestOrchestrator" }
+
+appintro = { module = "com.github.apl-devs:appintro", version.ref = "appintro" }
+bottomsheetbuilder = { module = "com.github.rubensousa:bottomsheetbuilder", version.ref = "bottomsheetbuilder" }
+bottomsheetpickers = { module = "com.philliphsu:bottomsheetpickers", version.ref = "bottomsheetpickers" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commonsIo" }
+dropbox-core-sdk = { module = "com.dropbox.core:dropbox-core-sdk", version.ref = "dropbox" }
+expansionpanel = { module = "com.github.florent37:expansionpanel", version.ref = "expansionpanel" }
+fingerprint-auth = { module = "com.multidots:fingerprint-auth", version.ref = "fingerprintAuth" }
+free-reflection = { module = "me.weishu:free_reflection", version.ref = "freeReflection" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+itextpdf = { module = "com.itextpdf:itextpdf", version.ref = "itext" }
+junit = { module = "junit:junit", version.ref = "junit" }
+jxl = { module = "net.sourceforge.jexcelapi:jxl", version.ref = "jxl" }
+lib-recur = { module = "org.dmfs:lib-recur", version.ref = "libRecur" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+material-about-library = { module = "com.github.daniel-stoneuk:material-about-library", version.ref = "materialAboutLibrary" }
+material-dialogs-core = { module = "com.afollestad.material-dialogs:core", version.ref = "materialDialogs" }
+material-dialogs-commons = { module = "com.afollestad.material-dialogs:commons", version.ref = "materialDialogs" }
+material-spinner = { module = "com.jaredrummler:material-spinner", version.ref = "materialSpinner" }
+materialdrawer = { module = "com.mikepenz:materialdrawer", version.ref = "materialdrawer" }
+materialish-progress = { module = "com.pnikosis:materialish-progress", version.ref = "materialishProgress" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
+opencsv = { module = "com.opencsv:opencsv", version.ref = "opencsv" }
+osmdroid-android = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroid" }
+patternlockview = { module = "com.github.aritraroy.PatternLockView:patternlockview", version.ref = "patternlockview" }
+pinlockview = { module = "com.github.aritraroy:PinLockView", version.ref = "pinlockview" }
+viewpager-indicator = { module = "com.github.ronaldsmartin:Material-ViewPagerIndicator", version.ref = "viewpagerIndicator" }
+zip4j = { module = "net.lingala.zip4j:zip4j", version.ref = "zip4j" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

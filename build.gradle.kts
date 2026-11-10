@@ -17,17 +17,11 @@
  * along with MoneyWallet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
-
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    // Provisions a JDK for the Gradle daemon when the required one is not installed locally.
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.10.0'
+    alias(libs.plugins.android.application) apply false
 }
 
-include ':app'
+tasks.register<Delete>("clean") {
+    delete(rootProject.layout.buildDirectory)
+}
