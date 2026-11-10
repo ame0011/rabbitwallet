@@ -19,10 +19,14 @@
 
 package com.amesingularity.rabbitwallet.ui.notification;
 
+import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Build;
+
+import androidx.core.content.ContextCompat;
 
 import com.amesingularity.rabbitwallet.R;
 
@@ -41,6 +45,18 @@ public class NotificationContract {
     public static final int NOTIFICATION_ID_EXCHANGE_RATE_PROGRESS = 23456;
     public static final int NOTIFICATION_ID_EXCHANGE_RATE_ERROR = 23457;
     public static final int NOTIFICATION_ID_REMINDER = 23458;
+
+    /**
+     * @return true if the application is allowed to post notifications. From Android 13 the user
+     * can deny the POST_NOTIFICATIONS permission: in that case the notifications are silently
+     * dropped by the system and the application keeps working.
+     */
+    public static boolean canPostNotifications(Context context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
+        return ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
+    }
 
     public static void initializeNotificationChannels(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

@@ -37,7 +37,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.amesingularity.rabbitwallet.R;
 import com.amesingularity.rabbitwallet.api.BackendServiceFactory;
-import com.amesingularity.rabbitwallet.broadcast.AutoBackupBroadcastReceiver;
+import com.amesingularity.rabbitwallet.service.AutoBackupWorker;
 import com.amesingularity.rabbitwallet.model.IFile;
 import com.amesingularity.rabbitwallet.storage.preference.BackendManager;
 import com.amesingularity.rabbitwallet.ui.activity.BackendExplorerActivity;
@@ -183,7 +183,7 @@ public class AutoBackupSettingDialog extends DialogFragment {
         BackendManager.setAutoBackupHoursOffset(mBackendId, OFFSET_MIN_HOURS + (mOffsetSeekBar.getProgress() * OFFSET_BETWEEN_HOURS));
         BackendManager.setAutoBackupFolder(mBackendId, mFolder != null ? mFolder.encodeToString() : null);
         BackendManager.setAutoBackupPassword(mBackendId, mPasswordEditText.getText().toString());
-        AutoBackupBroadcastReceiver.scheduleAutoBackupTask(getActivity());
+        AutoBackupWorker.schedule(getActivity());
     }
 
     @Override

@@ -36,7 +36,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.amesingularity.rabbitwallet.R;
 import com.amesingularity.rabbitwallet.broadcast.LocalAction;
-import com.amesingularity.rabbitwallet.service.BackupHandlerIntentService;
+import com.amesingularity.rabbitwallet.service.BackupWorker;
 import com.amesingularity.rabbitwallet.ui.activity.base.BaseActivity;
 import com.amesingularity.rabbitwallet.ui.fragment.base.NavigableFragment;
 import com.amesingularity.rabbitwallet.ui.fragment.dialog.GenericProgressDialog;
@@ -118,7 +118,7 @@ public class BackupListActivity extends BaseActivity implements ToolbarControlle
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction() != null) {
-                String callerId = intent.getStringExtra(BackupHandlerIntentService.CALLER_ID);
+                String callerId = intent.getStringExtra(BackupWorker.CALLER_ID);
                 if (!BackupHandlerFragment.BACKUP_SERVICE_CALLER_ID.equals(callerId)) {
                     // the service has sent a message using the local broadcast manager but it
                     // is not directed to this fragment. we can simply ignore it. this is useful
@@ -129,11 +129,11 @@ public class BackupListActivity extends BaseActivity implements ToolbarControlle
                 switch (intent.getAction()) {
                     case LocalAction.ACTION_BACKUP_SERVICE_STARTED:
                         if (mProgressDialog == null) {
-                            switch (intent.getIntExtra(BackupHandlerIntentService.ACTION, 0)) {
-                                case BackupHandlerIntentService.ACTION_BACKUP:
+                            switch (intent.getIntExtra(BackupWorker.ACTION, 0)) {
+                                case BackupWorker.ACTION_BACKUP:
                                     mProgressDialog = GenericProgressDialog.newInstance(R.string.title_backup_creation, R.string.message_async_init, false);
                                     break;
-                                case BackupHandlerIntentService.ACTION_RESTORE:
+                                case BackupWorker.ACTION_RESTORE:
                                     mProgressDialog = GenericProgressDialog.newInstance(R.string.title_backup_restoring, R.string.message_async_init, false);
                                     break;
                                 default:
@@ -144,20 +144,20 @@ public class BackupListActivity extends BaseActivity implements ToolbarControlle
                         break;
                     case LocalAction.ACTION_BACKUP_SERVICE_RUNNING:
                         if (mProgressDialog != null) {
-                            int status = intent.getIntExtra(BackupHandlerIntentService.PROGRESS_STATUS, 0);
-                            int value = intent.getIntExtra(BackupHandlerIntentService.PROGRESS_VALUE, 0);
+                            int status = intent.getIntExtra(BackupWorker.PROGRESS_STATUS, 0);
+                            int value = intent.getIntExtra(BackupWorker.PROGRESS_VALUE, 0);
                             int contentRes = 0;
                             switch (status) {
-                                case BackupHandlerIntentService.STATUS_BACKUP_CREATION:
+                                case BackupWorker.STATUS_BACKUP_CREATION:
                                     contentRes = R.string.message_backup_status_creation;
                                     break;
-                                case BackupHandlerIntentService.STATUS_BACKUP_UPLOADING:
+                                case BackupWorker.STATUS_BACKUP_UPLOADING:
                                     contentRes = R.string.message_backup_status_uploading;
                                     break;
-                                case BackupHandlerIntentService.STATUS_BACKUP_DOWNLOADING:
+                                case BackupWorker.STATUS_BACKUP_DOWNLOADING:
                                     contentRes = R.string.message_backup_status_downloading;
                                     break;
-                                case BackupHandlerIntentService.STATUS_BACKUP_RESTORING:
+                                case BackupWorker.STATUS_BACKUP_RESTORING:
                                     contentRes = R.string.message_backup_status_restoring;
                                     break;
                             }
@@ -171,11 +171,11 @@ public class BackupListActivity extends BaseActivity implements ToolbarControlle
                         }
                         int titleRes = R.string.title_success;
                         int messageRes;
-                        switch (intent.getIntExtra(BackupHandlerIntentService.ACTION, 0)) {
-                            case BackupHandlerIntentService.ACTION_BACKUP:
+                        switch (intent.getIntExtra(BackupWorker.ACTION, 0)) {
+                            case BackupWorker.ACTION_BACKUP:
                                 messageRes = R.string.message_backup_creation_success;
                                 break;
-                            case BackupHandlerIntentService.ACTION_RESTORE:
+                            case BackupWorker.ACTION_RESTORE:
                                 messageRes = R.string.message_backup_restoring_success;
                                 break;
                             default:
@@ -210,15 +210,15 @@ public class BackupListActivity extends BaseActivity implements ToolbarControlle
                             mProgressDialog.dismissAllowingStateLoss();
                             mProgressDialog = null;
                         }
-                        Exception exception = (Exception) intent.getSerializableExtra(BackupHandlerIntentService.EXCEPTION);
+                        Exception exception = (Exception) intent.getSerializableExtra(BackupWorker.EXCEPTION);
                         String message = exception.getMessage();
                         titleRes = R.string.title_failed;
                         String messageString;
-                        switch (intent.getIntExtra(BackupHandlerIntentService.ACTION, 0)) {
-                            case BackupHandlerIntentService.ACTION_BACKUP:
+                        switch (intent.getIntExtra(BackupWorker.ACTION, 0)) {
+                            case BackupWorker.ACTION_BACKUP:
                                 messageString = getString(R.string.message_backup_creation_failed, message);
                                 break;
-                            case BackupHandlerIntentService.ACTION_RESTORE:
+                            case BackupWorker.ACTION_RESTORE:
                                 messageString = getString(R.string.message_backup_restoring_failed, message);
                                 break;
                             default:

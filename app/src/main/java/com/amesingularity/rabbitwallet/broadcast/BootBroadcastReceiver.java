@@ -23,6 +23,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.amesingularity.rabbitwallet.service.AutoBackupWorker;
+
 /**
  * Created by andrea on 29/07/18.
  */
@@ -35,7 +37,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         if (ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             DailyBroadcastReceiver.scheduleDailyNotification(context);
             RecurrenceBroadcastReceiver.scheduleRecurrenceTask(context);
-            AutoBackupBroadcastReceiver.scheduleAutoBackupTask(context);
+            AutoBackupWorker.schedule(context);
         }
     }
 }

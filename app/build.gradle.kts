@@ -114,6 +114,7 @@ dependencies {
     implementation(libs.androidx.annotation)
     implementation(libs.material)
     implementation(libs.androidx.preference)
+    implementation(libs.androidx.work.runtime)
     implementation(libs.material.dialogs.core)
     implementation(libs.material.dialogs.commons)
     implementation(libs.materialdrawer) {

@@ -62,7 +62,7 @@ import com.amesingularity.rabbitwallet.broadcast.LocalAction;
 import com.amesingularity.rabbitwallet.model.ColorIcon;
 import com.amesingularity.rabbitwallet.model.Money;
 import com.amesingularity.rabbitwallet.model.WalletAccount;
-import com.amesingularity.rabbitwallet.service.BackupHandlerIntentService;
+import com.amesingularity.rabbitwallet.service.BackupWorker;
 import com.amesingularity.rabbitwallet.storage.database.Contract;
 import com.amesingularity.rabbitwallet.storage.database.DataContentProvider;
 import com.amesingularity.rabbitwallet.storage.preference.PreferenceManager;
@@ -652,8 +652,8 @@ public class MainActivity extends BaseActivity implements DrawerController, Acco
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                int action = intent.getIntExtra(BackupHandlerIntentService.ACTION, 0);
-                if (action == BackupHandlerIntentService.ACTION_RESTORE) {
+                int action = intent.getIntExtra(BackupWorker.ACTION, 0);
+                if (action == BackupWorker.ACTION_RESTORE) {
                     getSupportLoaderManager().restartLoader(LOADER_WALLETS, null, MainActivity.this);
                 }
             }

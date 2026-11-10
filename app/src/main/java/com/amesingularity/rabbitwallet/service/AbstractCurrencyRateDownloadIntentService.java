@@ -19,6 +19,7 @@
 
 package com.amesingularity.rabbitwallet.service;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.IntentService;
 import android.content.Intent;
@@ -100,6 +101,7 @@ public abstract class AbstractCurrencyRateDownloadIntentService extends IntentSe
         startForeground(NotificationContract.NOTIFICATION_ID_EXCHANGE_RATE_PROGRESS, mBuilder.build());
     }
 
+    @SuppressLint("MissingPermission") // the permission is checked by canPostNotifications()
     private void showError(String error) {
         mBuilder = new NotificationCompat.Builder(getBaseContext(), NotificationContract.NOTIFICATION_CHANNEL_ERROR)
                 .setSmallIcon(Utils.isAtLeastLollipop() ? R.drawable.ic_notification : R.mipmap.ic_launcher)
@@ -107,8 +109,10 @@ public abstract class AbstractCurrencyRateDownloadIntentService extends IntentSe
                 .setContentText(getString(R.string.notification_content_error_message, error))
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(getString(R.string.notification_content_error_message, error)))
                 .setCategory(NotificationCompat.CATEGORY_ERROR);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(NotificationContract.NOTIFICATION_ID_EXCHANGE_RATE_ERROR, mBuilder.build());
+        if (NotificationContract.canPostNotifications(this)) {
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+            notificationManager.notify(NotificationContract.NOTIFICATION_ID_EXCHANGE_RATE_ERROR, mBuilder.build());
+        }
     }
 
     public class MissingApiKey extends Exception {

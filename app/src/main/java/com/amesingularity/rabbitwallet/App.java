@@ -22,7 +22,7 @@ package com.amesingularity.rabbitwallet;
 import android.app.Application;
 import android.content.Context;
 
-import com.amesingularity.rabbitwallet.broadcast.AutoBackupBroadcastReceiver;
+import com.amesingularity.rabbitwallet.service.AutoBackupWorker;
 import com.amesingularity.rabbitwallet.broadcast.DailyBroadcastReceiver;
 import com.amesingularity.rabbitwallet.broadcast.RecurrenceBroadcastReceiver;
 import com.amesingularity.rabbitwallet.storage.preference.BackendManager;
@@ -55,7 +55,7 @@ public class App extends Application {
         // canceled by the OS. This is the best place where all those things can be scheduled again.
         DailyBroadcastReceiver.scheduleDailyNotification(this);
         RecurrenceBroadcastReceiver.scheduleRecurrenceTask(this);
-        AutoBackupBroadcastReceiver.scheduleAutoBackupTask(this);
+        AutoBackupWorker.schedule(this);
     }
 
     @Override

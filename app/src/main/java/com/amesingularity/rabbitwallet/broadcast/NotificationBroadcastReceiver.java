@@ -25,7 +25,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.amesingularity.rabbitwallet.service.BackupHandlerIntentService;
+import com.amesingularity.rabbitwallet.service.BackupWorker;
 import com.amesingularity.rabbitwallet.ui.notification.NotificationContract;
 
 /**
@@ -54,8 +54,8 @@ public class NotificationBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void restartAutoBackupIntentService(Context context, Bundle arguments) {
-        Intent intent = new Intent(context, BackupHandlerIntentService.class);
+        Intent intent = new Intent();
         intent.putExtras(arguments);
-        BackupHandlerIntentService.startInForeground(context, intent);
+        BackupWorker.enqueueInForeground(context, intent);
     }
 }

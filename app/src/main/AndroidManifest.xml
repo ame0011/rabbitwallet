@@ -133,9 +133,6 @@
             android:name=".service.openexchangerates.OpenExchangeRatesCurrencyRateDownloadIntentService"
             android:foregroundServiceType="dataSync" />
         <service android:name=".service.AttachmentHandlerIntentService" />
-        <service
-            android:name=".service.BackupHandlerIntentService"
-            android:foregroundServiceType="dataSync" />
         <service android:name=".service.BackendHandlerIntentService" />
         <service
             android:name=".service.RecurrenceHandlerIntentService"
@@ -143,10 +140,15 @@
             android:exported="false" />
         <service android:name=".service.UpgradeLegacyEditionIntentService" />
         <service android:name=".service.ImportExportIntentService" />
+        <!-- WorkManager executes foreground workers through this service: declare the dataSync
+             type so that the backup progress notification can be shown on Android 14+. -->
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="dataSync"
+            tools:node="merge" />
 
         <receiver android:name=".broadcast.DailyBroadcastReceiver" />
         <receiver android:name=".broadcast.RecurrenceBroadcastReceiver" />
-        <receiver android:name=".broadcast.AutoBackupBroadcastReceiver" />
         <receiver android:name=".broadcast.NotificationBroadcastReceiver" />
         <receiver
             android:name=".broadcast.BootBroadcastReceiver"
