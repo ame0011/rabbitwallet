@@ -19,12 +19,18 @@
 
 package com.amesingularity.rabbitwallet.ui.activity;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.Button;
@@ -52,9 +58,17 @@ public class LauncherActivity extends ThemedActivity {
 
     private ProgressWheel mProgressWheel;
 
+    private ActivityResultLauncher<String> mNotificationPermissionLauncher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // The notification permission is required from Android 13: the result is ignored
+        // because the application works even when it is denied (only reminders and error
+        // notifications are dropped by the system), so the main screen is always opened.
+        mNotificationPermissionLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                granted -> openMainActivity());
         if (UpgradeLegacyEditionIntentService.isLegacyEditionDetected(this)) {
             setContentView(R.layout.activity_launcher_legacy_edition_upgrade);
             mProgressWheel = findViewById(R.id.progress_wheel);
@@ -115,8 +129,25 @@ public class LauncherActivity extends ThemedActivity {
     }
 
     private void startMainActivity() {
+        if (shouldRequestNotificationPermission()) {
+            // Remember the request: the system will not show the dialog again after two denials,
+            // so there is no point in asking on every startup.
+            PreferenceManager.setNotificationPermissionRequested(true);
+            mNotificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+        } else {
+            openMainActivity();
+        }
+    }
+
+    private void openMainActivity() {
         startActivity(new Intent(this, MainActivity.class));
         finish();
+    }
+
+    private boolean shouldRequestNotificationPermission() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && !PreferenceManager.isNotificationPermissionRequested()
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED;
     }
 
     private void showUpgradeLegacyEditionErrorMessage() {

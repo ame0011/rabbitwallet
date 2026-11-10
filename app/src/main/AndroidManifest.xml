@@ -28,6 +28,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Required to post the backup and exchange rate notifications (Android 13+). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Required from Android 14 to run the backup and exchange rate services as
+         foreground services. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -38,7 +43,10 @@
         android:theme="@style/MoneyWalletAppTheme"
         android:requestLegacyExternalStorage="true"
         android:fullBackupContent="@xml/backup_rules"
-        tools:ignore="GoogleAppIndexingWarning">
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:localeConfig="@xml/locales_config"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="33">
         <activity
             android:name=".ui.activity.LauncherActivity"
             android:exported="true">
@@ -121,9 +129,13 @@
                 android:resource="@xml/file_provider_paths" />
         </provider>
 
-        <service android:name=".service.openexchangerates.OpenExchangeRatesCurrencyRateDownloadIntentService" />
+        <service
+            android:name=".service.openexchangerates.OpenExchangeRatesCurrencyRateDownloadIntentService"
+            android:foregroundServiceType="dataSync" />
         <service android:name=".service.AttachmentHandlerIntentService" />
-        <service android:name=".service.BackupHandlerIntentService" />
+        <service
+            android:name=".service.BackupHandlerIntentService"
+            android:foregroundServiceType="dataSync" />
         <service android:name=".service.BackendHandlerIntentService" />
         <service
             android:name=".service.RecurrenceHandlerIntentService"

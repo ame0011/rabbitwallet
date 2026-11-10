@@ -67,6 +67,8 @@ public class PreferenceManager {
 
     private static final String LAST_DATA_CHANGE_TIME = "last_data_change_time";
 
+    private static final String NOTIFICATION_PERMISSION_REQUESTED = "notification_permission_requested";
+
     public static final int LOCK_MODE_NONE = 0;
     public static final int LOCK_MODE_PIN = 1;
     public static final int LOCK_MODE_SEQUENCE = 2;
@@ -191,6 +193,10 @@ public class PreferenceManager {
         mPreferences.edit().putBoolean(FIRST_START, done).apply();
     }
 
+    public static void setNotificationPermissionRequested(boolean requested) {
+        mPreferences.edit().putBoolean(NOTIFICATION_PERMISSION_REQUESTED, requested).apply();
+    }
+
     public static void setServiceApiKey(int service, String key) {
         mPreferences.edit().putString(SERVICE_API_KEY + String.valueOf(service), key).apply();
     }
@@ -296,6 +302,10 @@ public class PreferenceManager {
 
     public static boolean isFirstStartDone() {
         return mPreferences.getBoolean(FIRST_START, false);
+    }
+
+    public static boolean isNotificationPermissionRequested() {
+        return mPreferences.getBoolean(NOTIFICATION_PERMISSION_REQUESTED, false);
     }
 
     public static String getServiceApiKey(int service) {
