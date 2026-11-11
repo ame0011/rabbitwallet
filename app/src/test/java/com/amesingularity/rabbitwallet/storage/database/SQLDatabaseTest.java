@@ -19,7 +19,6 @@
 
 package com.amesingularity.rabbitwallet.storage.database;
 
-import android.app.Instrumentation;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -28,15 +27,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.text.TextUtils;
 
-import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.core.app.ApplicationProvider;
 
 import com.amesingularity.rabbitwallet.R;
+import com.amesingularity.rabbitwallet.TestApplication;
 import com.amesingularity.rabbitwallet.model.Money;
 import com.amesingularity.rabbitwallet.utils.DateUtils;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import java.io.File;
 import java.util.Arrays;
@@ -49,7 +52,13 @@ import static junit.framework.Assert.assertNotNull;
 
 /**
  * Created by andrea on 28/08/18.
+ *
+ * The test runs on Robolectric so that the database layer is exercised on every CI build without
+ * an emulator. The application under test is replaced with {@link TestApplication} to avoid the
+ * side effects of the real {@code App} class (scheduled workers, alarms, notification channels).
  */
+@RunWith(RobolectricTestRunner.class)
+@Config(application = TestApplication.class)
 public class SQLDatabaseTest {
 
     private Context mContext;
@@ -57,8 +66,7 @@ public class SQLDatabaseTest {
 
     @Before
     public void setUp() {
-        Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
-        Context baseContext = instrumentation.getTargetContext();
+        Context baseContext = ApplicationProvider.getApplicationContext();
         mContext = new IsolatedContext(baseContext);
         // remove existing database (if any) before starting the test
         mContext.deleteDatabase(SQLDatabase.DATABASE_NAME);
