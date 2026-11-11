@@ -1,0 +1,342 @@
+{
+  "header": {
+    "version_code": 2
+  },
+  "currencies": [
+    {
+      "iso": "EUR",
+      "name": "Euro",
+      "symbol": "\u20ac",
+      "decimals": 2,
+      "favourite": true,
+      "last_edit": 1600000000001,
+      "deleted": false
+    }
+  ],
+  "wallets": [
+    {
+      "name": "Cash wallet",
+      "icon": "ic_wallet",
+      "currency": "EUR",
+      "start_money": 100000,
+      "count_in_total": true,
+      "archived": false,
+      "index": 0,
+      "id": "00000000-0000-0000-0000-000000000001",
+      "last_edit": 1600000000002,
+      "deleted": false
+    },
+    {
+      "name": "Bank",
+      "icon": "ic_bank",
+      "currency": "EUR",
+      "start_money": -500000,
+      "count_in_total": true,
+      "archived": true,
+      "note": "second wallet",
+      "tag": "wallet-tag",
+      "index": 1,
+      "id": "00000000-0000-0000-0000-000000000002",
+      "last_edit": 1600000000003,
+      "deleted": false
+    }
+  ],
+  "categories": [
+    {
+      "name": "Food",
+      "icon": "ic_food",
+      "type": 1,
+      "show_report": true,
+      "index": 0,
+      "id": "00000000-0000-0000-0000-000000000003",
+      "last_edit": 1600000000004,
+      "deleted": false
+    },
+    {
+      "name": "Restaurant",
+      "icon": "ic_restaurant",
+      "type": 1,
+      "parent": "00000000-0000-0000-0000-000000000003",
+      "show_report": true,
+      "index": 1,
+      "id": "00000000-0000-0000-0000-000000000004",
+      "last_edit": 1600000000005,
+      "deleted": false
+    }
+  ],
+  "events": [
+    {
+      "name": "Birthday",
+      "icon": "ic_event",
+      "start_date": "2020-01-01",
+      "end_date": "2020-01-31",
+      "tag": "event-tag",
+      "id": "00000000-0000-0000-0000-000000000005",
+      "last_edit": 1600000000006,
+      "deleted": false
+    }
+  ],
+  "places": [
+    {
+      "name": "Shop",
+      "icon": "ic_place",
+      "address": "Via Roma 1",
+      "latitude": 45.4642,
+      "longitude": 9.19,
+      "id": "00000000-0000-0000-0000-000000000006",
+      "last_edit": 1600000000007,
+      "deleted": false
+    }
+  ],
+  "people": [
+    {
+      "name": "Alice",
+      "icon": "ic_person",
+      "note": "colleague",
+      "id": "00000000-0000-0000-0000-000000000007",
+      "last_edit": 1600000000008,
+      "deleted": false
+    }
+  ],
+  "event_people": [
+    {
+      "event": "00000000-0000-0000-0000-000000000005",
+      "person": "00000000-0000-0000-0000-000000000007",
+      "id": "00000000-0000-0000-0000-000000000008",
+      "last_edit": 1600000000009,
+      "deleted": false
+    }
+  ],
+  "debts": [
+    {
+      "type": 0,
+      "icon": "ic_debt",
+      "description": "Loan from Alice",
+      "date": "2020-02-01",
+      "expiration_date": "2021-02-01",
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "money": 250000,
+      "archived": false,
+      "id": "00000000-0000-0000-0000-000000000009",
+      "last_edit": 1600000000010,
+      "deleted": false
+    }
+  ],
+  "debt_people": [
+    {
+      "debt": "00000000-0000-0000-0000-000000000009",
+      "person": "00000000-0000-0000-0000-000000000007",
+      "id": "00000000-0000-0000-0000-00000000000A",
+      "last_edit": 1600000000011,
+      "deleted": false
+    }
+  ],
+  "budgets": [
+    {
+      "type": 1,
+      "category": "00000000-0000-0000-0000-000000000004",
+      "start_date": "2020-01-01",
+      "end_date": "2020-12-31",
+      "money": 500000,
+      "currency": "EUR",
+      "id": "00000000-0000-0000-0000-00000000000B",
+      "last_edit": 1600000000012,
+      "deleted": false
+    }
+  ],
+  "budget_wallets": [
+    {
+      "budget": "00000000-0000-0000-0000-00000000000B",
+      "wallet": "00000000-0000-0000-0000-000000000002",
+      "id": "00000000-0000-0000-0000-00000000000C",
+      "last_edit": 1600000000013,
+      "deleted": false
+    }
+  ],
+  "savings": [
+    {
+      "description": "New car",
+      "icon": "ic_saving",
+      "start_money": 0,
+      "end_money": 10000000,
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "end_date": "2025-12-31",
+      "complete": false,
+      "id": "00000000-0000-0000-0000-00000000000D",
+      "last_edit": 1600000000014,
+      "deleted": false
+    }
+  ],
+  "recurrent_transactions": [
+    {
+      "money": 5000,
+      "description": "Rent",
+      "category": "00000000-0000-0000-0000-000000000003",
+      "direction": 0,
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "confirmed": true,
+      "count_in_total": true,
+      "start_date": "2020-01-01",
+      "next_occurrence": "2020-02-01",
+      "rule": "FREQ=MONTHLY;INTERVAL=1",
+      "id": "00000000-0000-0000-0000-00000000000E",
+      "last_edit": 1600000000015,
+      "deleted": false
+    }
+  ],
+  "recurrent_transfers": [
+    {
+      "description": "Monthly saving",
+      "from_wallet": "00000000-0000-0000-0000-000000000001",
+      "to_wallet": "00000000-0000-0000-0000-000000000002",
+      "from_money": 100000,
+      "to_money": 99000,
+      "tax_money": 1000,
+      "confirmed": true,
+      "count_in_total": false,
+      "start_date": "2020-01-15",
+      "next_occurrence": "2020-02-15",
+      "rule": "FREQ=MONTHLY;INTERVAL=1",
+      "id": "00000000-0000-0000-0000-00000000000F",
+      "last_edit": 1600000000016,
+      "deleted": false
+    }
+  ],
+  "transactions": [
+    {
+      "money": 4560,
+      "date": "2020-01-05",
+      "description": "Pizza",
+      "category": "00000000-0000-0000-0000-000000000004",
+      "direction": 0,
+      "type": 2,
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "place": "00000000-0000-0000-0000-000000000006",
+      "event": "00000000-0000-0000-0000-000000000005",
+      "recurrence": "00000000-0000-0000-0000-00000000000E",
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000010",
+      "last_edit": 1600000000017,
+      "deleted": false
+    },
+    {
+      "money": 100000,
+      "date": "2020-01-06",
+      "description": "From wallet",
+      "category": "00000000-0000-0000-0000-000000000003",
+      "direction": 0,
+      "type": 3,
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000011",
+      "last_edit": 1600000000018,
+      "deleted": false
+    },
+    {
+      "money": 100000,
+      "date": "2020-01-06",
+      "description": "To wallet",
+      "category": "00000000-0000-0000-0000-000000000003",
+      "direction": 1,
+      "type": 4,
+      "wallet": "00000000-0000-0000-0000-000000000002",
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000012",
+      "last_edit": 1600000000019,
+      "deleted": false
+    }
+  ],
+  "transaction_people": [
+    {
+      "transaction": "00000000-0000-0000-0000-000000000010",
+      "person": "00000000-0000-0000-0000-000000000007",
+      "id": "00000000-0000-0000-0000-000000000013",
+      "last_edit": 1600000000020,
+      "deleted": false
+    }
+  ],
+  "transaction_models": [
+    {
+      "money": 12000,
+      "description": "Groceries",
+      "category": "00000000-0000-0000-0000-000000000004",
+      "direction": 0,
+      "wallet": "00000000-0000-0000-0000-000000000001",
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000014",
+      "last_edit": 1600000000021,
+      "deleted": false
+    }
+  ],
+  "transfers": [
+    {
+      "description": "To bank",
+      "date": "2020-01-06",
+      "from": "00000000-0000-0000-0000-000000000011",
+      "to": "00000000-0000-0000-0000-000000000012",
+      "recurrence": "00000000-0000-0000-0000-00000000000F",
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000015",
+      "last_edit": 1600000000022,
+      "deleted": false
+    }
+  ],
+  "transfer_people": [
+    {
+      "transfer": "00000000-0000-0000-0000-000000000015",
+      "person": "00000000-0000-0000-0000-000000000007",
+      "id": "00000000-0000-0000-0000-000000000016",
+      "last_edit": 1600000000023,
+      "deleted": false
+    }
+  ],
+  "transfer_models": [
+    {
+      "description": "Savings model",
+      "from_wallet": "00000000-0000-0000-0000-000000000001",
+      "to_wallet": "00000000-0000-0000-0000-000000000002",
+      "from_money": 50000,
+      "to_money": 49500,
+      "tax_money": 500,
+      "confirmed": true,
+      "count_in_total": true,
+      "id": "00000000-0000-0000-0000-000000000017",
+      "last_edit": 1600000000024,
+      "deleted": false
+    }
+  ],
+  "attachments": [
+    {
+      "file": "receipt.png",
+      "name": "receipt.png",
+      "type": "image/png",
+      "size": 2048,
+      "id": "00000000-0000-0000-0000-000000000018",
+      "last_edit": 1600000000025,
+      "deleted": false
+    }
+  ],
+  "transaction_attachment": [
+    {
+      "transaction": "00000000-0000-0000-0000-000000000010",
+      "attachment": "00000000-0000-0000-0000-000000000018",
+      "id": "00000000-0000-0000-0000-000000000019",
+      "last_edit": 1600000000026,
+      "deleted": false
+    }
+  ],
+  "transfer_attachment": [
+    {
+      "transfer": "00000000-0000-0000-0000-000000000015",
+      "attachment": "00000000-0000-0000-0000-000000000018",
+      "id": "00000000-0000-0000-0000-00000000001A",
+      "last_edit": 1600000000027,
+      "deleted": false
+    }
+  ]
+}
