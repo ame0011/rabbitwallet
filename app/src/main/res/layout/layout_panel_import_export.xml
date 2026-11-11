@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/material_activity_body_edit_text_margin_bottom"
-            android:hint="@string/hint_export_folder"
+            android:hint="@string/hint_export_file"
             android:inputType="textNoSuggestions"
             app:met_mode="floatingLabel"
             app:met_leftIcon="@drawable/ic_folder_open_black_24dp"/>

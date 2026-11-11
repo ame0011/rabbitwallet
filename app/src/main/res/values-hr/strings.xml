@@ -152,4 +152,7 @@
     <string name="about_hint_version">"Inačica"</string>
     <string name="about_hint_changelog">"Izvještaj promjena"</string>
     <string name="about_hint_translators">"Prevoditelji"</string>
+    <string name="hint_export_file">"Datoteka za izvoz"</string>
+    <string name="error_input_missing_output_file">"Odaberite izlaznu datoteku"</string>
+    <string name="message_backup_external_memory_removed">"Sigurnosne kopije spremljene na vanjsku pohranu više nisu podržane. Otvorite odjeljak sigurnosnih kopija i dopustite pristup mapi putem Storage Access Frameworka kako biste nastavili koristiti automatsku sigurnosnu kopiju. Postojeće datoteke sigurnosnih kopija još se mogu vratiti uvozom iz iste mape."</string>
 </resources>

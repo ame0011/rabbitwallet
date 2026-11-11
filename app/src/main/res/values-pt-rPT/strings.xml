@@ -95,4 +95,7 @@
     <string name="about_hint_version">"Versão"</string>
     <string name="about_hint_changelog">"Registo de alterações"</string>
     <string name="about_hint_translators">"Tradutores"</string>
+    <string name="hint_export_file">"Ficheiro a exportar"</string>
+    <string name="error_input_missing_output_file">"Selecione um ficheiro de saída"</string>
+    <string name="message_backup_external_memory_removed">"As cópias de segurança guardadas no armazenamento externo já não são suportadas. Abra a secção de cópias de segurança e conceda acesso a uma pasta com o Storage Access Framework para continuar a utilizar a cópia automática. Os ficheiros de cópia existentes ainda podem ser restaurados importando-os da mesma pasta."</string>
 </resources>

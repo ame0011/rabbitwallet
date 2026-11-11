@@ -40,7 +40,6 @@ import android.view.ViewGroup;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.amesingularity.rabbitwallet.R;
-import com.amesingularity.rabbitwallet.api.disk.DiskBackendServiceAPI;
 import com.amesingularity.rabbitwallet.broadcast.LocalAction;
 import com.amesingularity.rabbitwallet.model.IFile;
 import com.amesingularity.rabbitwallet.service.BackendHandlerIntentService;
@@ -158,11 +157,8 @@ public class BackendExplorerActivity extends SinglePanelActivity implements Swip
         switch (item.getItemId()) {
             case R.id.action_select_folder:
                 if (mActivityMode == MODE_FOLDER_PICKER) {
+                    // a null folder means the root of the backend
                     IFile folder = getCurrentFolder();
-                    if (folder == null) {
-                        // return the root folder of the device instead of null
-                        folder = DiskBackendServiceAPI.getRootFolder();
-                    }
                     Intent intent = new Intent();
                     intent.putExtra(RESULT_FILE, folder);
                     setResult(RESULT_OK, intent);

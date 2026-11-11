@@ -152,4 +152,7 @@
     <string name="about_hint_version">"Versió"</string>
     <string name="about_hint_changelog">"Historial de canvis"</string>
     <string name="about_hint_translators">"Traductors"</string>
+    <string name="hint_export_file">"Fitxer a exportar"</string>
+    <string name="error_input_missing_output_file">"Seleccioneu un fitxer de sortida"</string>
+    <string name="message_backup_external_memory_removed">"Les còpies de seguretat desades a l'emmagatzematge extern ja no són compatibles. Obriu la secció de còpies de seguretat i concediu accés a una carpeta amb el Storage Access Framework per continuar utilitzant la còpia automàtica. Els fitxers de còpia existents encara es poden restaurar important-los de la mateixa carpeta."</string>
 </resources>

@@ -152,4 +152,7 @@
     <string name="about_hint_version">"版本"</string>
     <string name="about_hint_changelog">"更新日志"</string>
     <string name="about_hint_translators">"翻译者"</string>
+    <string name="hint_export_file">"要导出的文件"</string>
+    <string name="error_input_missing_output_file">"请选择输出文件"</string>
+    <string name="message_backup_external_memory_removed">"不再支持将备份保存到外部存储。请打开备份页面，使用存储访问框架授权一个文件夹以继续使用自动备份。现有的备份文件仍可通过从同一文件夹导入来恢复。"</string>
 </resources>

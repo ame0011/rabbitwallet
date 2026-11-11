@@ -152,4 +152,7 @@
     <string name="about_hint_version">"Версия"</string>
     <string name="about_hint_changelog">"История изменений"</string>
     <string name="about_hint_translators">"Переводчики"</string>
+    <string name="hint_export_file">"Файл для экспорта"</string>
+    <string name="error_input_missing_output_file">"Выберите выходной файл"</string>
+    <string name="message_backup_external_memory_removed">"Резервные копии, сохранённые во внешнем хранилище, больше не поддерживаются. Откройте раздел резервных копий и предоставьте доступ к папке через Storage Access Framework, чтобы продолжить использовать автоматическое резервное копирование. Существующие файлы копий можно по-прежнему восстановить, импортировав их из той же папки."</string>
 </resources>

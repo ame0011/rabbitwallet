@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
 import com.amesingularity.rabbitwallet.broadcast.LocalAction;
 import com.amesingularity.rabbitwallet.model.DataFormat;
 import com.amesingularity.rabbitwallet.model.Wallet;
@@ -24,11 +23,19 @@ import com.amesingularity.rabbitwallet.storage.database.data.pdf.PDFDataExporter
 import com.amesingularity.rabbitwallet.storage.database.data.xls.XLSDataExporter;
 import com.amesingularity.rabbitwallet.utils.DateUtils;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by andrea on 20/12/18.
@@ -40,8 +47,18 @@ public class ImportExportIntentService extends IntentService {
     public static final String START_DATE = "ImportExportIntentService::Arguments::StartDate";
     public static final String END_DATE = "ImportExportIntentService::Arguments::EndDate";
     public static final String WALLETS = "ImportExportIntentService::Arguments::Wallets";
-    public static final String FOLDER = "ImportExportIntentService::Arguments::Folder";
-    public static final String FILE = "ImportExportIntentService::Arguments::File";
+    /**
+     * Document to read for the import operation (a content uri).
+     */
+    public static final String FILE_URI = "ImportExportIntentService::Arguments::FileUri";
+    /**
+     * Display name of the document to import, used to keep the file extension.
+     */
+    public static final String FILE_NAME = "ImportExportIntentService::Arguments::FileName";
+    /**
+     * Document where the export operation must write the result (a content uri).
+     */
+    public static final String OUTPUT_URI = "ImportExportIntentService::Arguments::OutputUri";
     public static final String UNIQUE_WALLET = "ImportExportIntentService::Arguments::UniqueWallet";
     public static final String OPTIONAL_COLUMNS = "ImportExportIntentService::Arguments::OptionalColumns";
 
@@ -51,6 +68,11 @@ public class ImportExportIntentService extends IntentService {
 
     public static final int MODE_EXPORT = 0;
     public static final int MODE_IMPORT = 1;
+
+    private static final String IMPORT_CACHE_FOLDER = "import";
+    private static final String EXPORT_CACHE_FOLDER = "exports";
+
+    private static final String DEFAULT_IMPORT_FILE_NAME = "import.csv";
 
     private LocalBroadcastManager mBroadcastManager;
 
@@ -76,16 +98,21 @@ public class ImportExportIntentService extends IntentService {
 
     private void handleImport(@NonNull Intent intent) {
         notifyTaskStarted(LocalAction.ACTION_IMPORT_SERVICE_STARTED);
+        File file = null;
         try {
             // extract parameters from the intent
             DataFormat dataFormat = (DataFormat) intent.getSerializableExtra(FORMAT);
-            File file = (File) intent.getSerializableExtra(FILE);
+            Uri uri = intent.getParcelableExtra(FILE_URI);
+            String fileName = intent.getStringExtra(FILE_NAME);
             if (dataFormat == null) {
                 throw new IllegalArgumentException("parameter is null [FORMAT]");
             }
-            if (file == null || !file.exists()) {
-                throw new IllegalArgumentException("parameter is null or not a file [FILE]");
+            if (uri == null) {
+                throw new IllegalArgumentException("parameter is null [FILE_URI]");
             }
+            // the importer works on a local file: copy the document selected by the user
+            // inside the application cache
+            file = copyDocumentToCache(uri, fileName);
             // initialize the correct data importer
             AbstractDataImporter dataImporter = getDataImporter(dataFormat, file);
             try {
@@ -96,6 +123,10 @@ public class ImportExportIntentService extends IntentService {
             notifyTaskFinished(LocalAction.ACTION_IMPORT_SERVICE_FINISHED);
         } catch (Exception e) {
             notifyTaskFailed(LocalAction.ACTION_IMPORT_SERVICE_FAILED, e);
+        } finally {
+            if (file != null) {
+                FileUtils.deleteQuietly(file.getParentFile());
+            }
         }
     }
 
@@ -107,7 +138,7 @@ public class ImportExportIntentService extends IntentService {
             Date startDate = (Date) intent.getSerializableExtra(START_DATE);
             Date endDate = (Date) intent.getSerializableExtra(END_DATE);
             Wallet[] wallets = getWalletList(intent, WALLETS);
-            File folder = (File) intent.getSerializableExtra(FOLDER);
+            Uri outputUri = intent.getParcelableExtra(OUTPUT_URI);
             boolean uniqueWallet = intent.getBooleanExtra(UNIQUE_WALLET, false);
             String[] optionalColumns = intent.getStringArrayExtra(OPTIONAL_COLUMNS);
             // check necessary parameters
@@ -117,9 +148,12 @@ public class ImportExportIntentService extends IntentService {
             if (wallets == null || wallets.length == 0) {
                 throw new IllegalArgumentException("parameter is null or empty [WALLETS]");
             }
-            if (folder == null || !folder.isDirectory()) {
-                throw new IllegalArgumentException("parameter is null or not a directory [FOLDER]");
+            if (outputUri == null) {
+                throw new IllegalArgumentException("parameter is null [OUTPUT_URI]");
             }
+            // the exporters work on a local file: write the result inside the application cache
+            // and copy it inside the document selected by the user at the end
+            File folder = prepareExportCacheFolder();
             // initialize the correct data exporter
             AbstractDataExporter dataExporter = getDataExporter(dataFormat, folder);
             ContentResolver contentResolver = getContentResolver();
@@ -182,11 +216,12 @@ public class ImportExportIntentService extends IntentService {
             }
             // close the exporter to flush and close all the open streams
             dataExporter.close();
-            // if no exception has been thrown so far, we can ask the exporter
-            // for the output file: we can pass the uri of this file inside the intent
-            // Uri resultUri = Uri.fromFile(dataExporter.getOutputFile());
+            // if no exception has been thrown so far, we can ask the exporter for the output
+            // file: it is copied inside the document selected by the user and its uri is
+            // passed back to the caller, so it can be opened with an external application
             String authority = getPackageName() + ".storage.file";
             File outputFile = dataExporter.getOutputFile();
+            copyFileToDocument(outputFile, outputUri);
             Uri resultUri = FileProvider.getUriForFile(this, authority, outputFile);
             String resultType = dataExporter.getResultType();
             // send a successful intent to inform the receivers that the operation succeed
@@ -229,8 +264,61 @@ public class ImportExportIntentService extends IntentService {
         mBroadcastManager.sendBroadcast(intent);
     }
 
-    private AbstractDataImporter getDataImporter(DataFormat dataFormat, File file) throws IOException {
-        switch (dataFormat) {
+    /**
+     * Copy the document selected by the user inside a temporary folder of the application cache.
+     * The importers work on plain files, so this is the only way to read a document that has been
+     * granted through the storage access framework.
+     */
+    private File copyDocumentToCache(@NonNull Uri uri, @Nullable String fileName) throws IOException {
+        File folder = new File(getCacheDir(), IMPORT_CACHE_FOLDER + File.separator + UUID.randomUUID().toString());
+        FileUtils.forceMkdir(folder);
+        File file = new File(folder, getSafeFileName(fileName));
+        try (InputStream inputStream = getContentResolver().openInputStream(uri);
+             OutputStream outputStream = new FileOutputStream(file)) {
+            if (inputStream == null) {
+                throw new IOException("Unable to open the selected document");
+            }
+            IOUtils.copy(inputStream, outputStream);
+        }
+        return file;
+    }
+
+    /**
+     * Copy the exported file inside the document created by the user through the storage access
+     * framework.
+     */
+    private void copyFileToDocument(@NonNull File file, @NonNull Uri uri) throws IOException {
+        try (InputStream inputStream = new FileInputStream(file);
+             OutputStream outputStream = getContentResolver().openOutputStream(uri)) {
+            if (outputStream == null) {
+                throw new IOException("Unable to open the destination document");
+            }
+            IOUtils.copy(inputStream, outputStream);
+        }
+    }
+
+    /**
+     * @return the folder (inside the application cache) where the exporters can write the result.
+     * The content of the folder is deleted before each export to avoid to fill the cache.
+     */
+    private File prepareExportCacheFolder() throws IOException {
+        File folder = new File(getCacheDir(), EXPORT_CACHE_FOLDER);
+        FileUtils.deleteQuietly(folder);
+        FileUtils.forceMkdir(folder);
+        return folder;
+    }
+
+    @NonNull
+    private String getSafeFileName(@Nullable String fileName) {
+        if (fileName == null) {
+            return DEFAULT_IMPORT_FILE_NAME;
+        }
+        // the display name may contain path separators: keep only the file name
+        String safeName = new File(fileName).getName();
+        return safeName.isEmpty() ? DEFAULT_IMPORT_FILE_NAME : safeName;
+    }
+
+    private AbstractDataImporter getDataImporter(DataFormat dataFormat, File file) throws IOException {        switch (dataFormat) {
             case CSV:
                 return new CSVDataImporter(this, file);
             default:

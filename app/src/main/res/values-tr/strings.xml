@@ -143,7 +143,6 @@
     <string name="hint_import_format"> "Biçimi içe aktar" </string>
     <string name="hint_export_format"> "Biçimi dışa aktar" </string>
     <string name="hint_import_file"> "Alınacak dosya" </string>
-    <string name="hint_export_folder"> "Klasörü dışa aktar" </string>
     <string name="hint_export_optional_columns"> "İsteğe bağlı sütunlar" </string>
     <string name="hint_export_unique_wallet"> "Farklı cüzdanlardan işlemlere katıl" </string>
 
@@ -272,7 +271,6 @@
     <string name="error_input_missing_description"> "Bir açıklama girin" </string>
     <string name="error_input_missing_format"> "Bir dosya formatı seçin" </string>
     <string name="error_input_missing_input_file"> "Bir giriş dosyası seçin" </string>
-    <string name="error_input_missing_output_folder"> "Bir çıktı klasörü seçin" </string>
 
     <string name="system_category_transfer"> Transfer </string>
     <string name="system_category_transfer_tax"> Vergi transferi </string>
@@ -331,16 +329,13 @@
     <string name="message_no_file_found"> "Dosya bulunamadı" </string>
     <string name="message_error_backend_recoverable"> "Bağlantı sorunu. Lütfen tekrar deneyin." </string>
 
-    <string name="cover_message_backup_external_memory_title"> "Uygulama yedeklemeleri doğrudan cihazın harici belleğinden alabilir ve geri yükleyebilir" </string>
     <string name="cover_message_backup_dropbox_title"> "Uygulama kişisel Dropbox hesabınızdan yedekler oluşturabilir ve geri yükleyebilir" </string>
-    <string name="cover_message_backup_external_memory_button"> "Devam Et" </string>
     <string name="cover_message_backup_dropbox_button"> "Giriş" </string>
 
     <string name="empty_message_secondary_panel"> "Ayrıntıları görmek için sol panelden bir öğe seçin" </string>
     <string name="empty_message_backup_cover"> "Kişisel yedeklemelerinizi saklamak ve almak için kullanmak istediğiniz hizmeti seçin" </string>
 
     <string name="title_warning"> "Uyarı" </string>
-    <string name="title_request_permission"> "İzin talebi" </string>
     <string name="title_backup_create"> "Yedekleme oluştur" </string>
     <string name="title_backup_creation"> "Yedek oluşturma" </string>
     <string name="title_backup_restore"> "Yedeklemeyi geri yükle" </string>
@@ -358,8 +353,6 @@
     <string name="title_data_importing"> "Verileri içe aktarma" </string>
     <string name="title_data_exporting"> "Verileri dışa aktarma" </string>
     <string name="message_backend_create_folder"> "Oluşturmak istediğiniz klasörün adını girin" </string>
-    <string name="message_permission_required_external_storage"> "Dosyaları okumak ve yazmak için harici depolamaya erişim izni gerekiyor. Lütfen etkinleştirin." </string>
-    <string name="message_permission_required_not_granted"> "İzin reddedildi. Lütfen uygulama ayarlarına gidin ve etkinleştirin." </string>
     <string name="message_backup_create"> "Yeni bir yedekleme oluşturmak istediğinizden emin misiniz? İşlem durdurulamaz. İsterseniz, yedekleme dosyasını korumak için bir parola belirleyebilirsiniz." </string>
     <string name="message_backup_restore_standard"> "Bu yedeği geri yüklemek istediğinizden emin misiniz? Tüm geçerli veriler kaybolacak ve işlem durdurulamaz. Devam mı?" </string>
     <string name="message_backup_restore_protected"> "Bu yedeği geri yüklemek istediğinizden emin misiniz? Tüm geçerli veriler kaybolacak ve işlem durdurulamaz. Yedekleme bir parola ile korunuyor, lütfen girin ve devam edin." </string>
@@ -434,7 +427,6 @@
     <string name="spinner_item_end_date"> "Kime: %s" </string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"Harici bellek"</string>
 
     <string name="setting_title_user_interface"> "Kullanıcı arayüzü" </string>
     <string name="setting_title_utility"> "Yardımcı Programlar" </string>
@@ -678,4 +670,7 @@
     <string name="activity_donation_action_contribute_content"> "Kaynak kodu herkese açık ve herkes işbirliği yapabilir" </string>
     <string name="activity_donation_final_content"> "Parasal veya parasal olmayan her katkı benim için eşit ve önemli bir fark yaratıyor. Umarım beğenirsiniz ve bu uygulamayı kullanmayı seçtiğiniz için tekrar teşekkürler." </string>
 
+    <string name="hint_export_file">"Dışa aktarılacak dosya"</string>
+    <string name="error_input_missing_output_file">"Bir çıktı dosyası seçin"</string>
+    <string name="message_backup_external_memory_removed">"Harici depolamaya kaydedilen yedekler artık desteklenmiyor. Otomatik yedeklemeyi kullanmaya devam etmek için yedekleme bölümünü açın ve Storage Access Framework ile bir klasöre erişim izni verin. Mevcut yedek dosyaları aynı klasörden içe aktarılarak yine de geri yüklenebilir."</string>
 </resources>

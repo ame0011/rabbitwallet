@@ -78,8 +78,6 @@
     <string name="bottom_sheet_icon_picker_title">Ikon személyre szabása</string>
     <string name="cover_message_backup_dropbox_button">Belépés</string>
     <string name="cover_message_backup_dropbox_title">Az alkalmazás képes csinálni és visszaállítani biztonsági mentést a dropbox fiókodból.</string>
-    <string name="cover_message_backup_external_memory_button">Tovább</string>
-    <string name="cover_message_backup_external_memory_title">Az alkalmazás képes csinálni és visszaállítani biztonsági mentést az eszközről.</string>
     <string name="default_category_car_expenses">Autós kiadások</string>
     <string name="default_category_food_drinks">Étel és ital</string>
     <string name="default_category_friends">Barátok</string>
@@ -140,7 +138,6 @@
     <string name="error_input_missing_format">Válassz egy file formátumot</string>
     <string name="error_input_missing_input_file">Válassz egy input file-t</string>
     <string name="error_input_missing_multiple_wallets">Válassz legalább egy pénztárcát</string>
-    <string name="error_input_missing_output_folder">Válassz egy kimeneti mappát</string>
     <string name="error_input_missing_start_date">Válassz egy kezdeti dátumot</string>
     <string name="error_input_missing_wallet">Válassz egy pénztárcát</string>
     <string name="error_input_name_not_valid">Érvénytelen név</string>
@@ -187,7 +184,6 @@
     <string name="hint_expense">Kiadás</string>
     <string name="hint_expenses">Kiadások</string>
     <string name="hint_expiration_date">Lejárat idátum</string>
-    <string name="hint_export_folder">Kiírás mappája</string>
     <string name="hint_export_format">Kiírás formátuma</string>
     <string name="hint_export_optional_columns">Extra oszlopok</string>
     <string name="hint_export_unique_wallet">Tranzakció megosztása pénztárcák között</string>
@@ -396,8 +392,6 @@
     <string name="message_no_transaction_found">Nem található tranzakció</string>
     <string name="message_no_transfer_found">Nem található átvezetés</string>
     <string name="message_no_wallet_found">Nem található pénztárca</string>
-    <string name="message_permission_required_external_storage">Engedély szükséges a tárhely használathoz, file-ok írásához, olvasásához. Kérlek engedélyezd az alkalmazás számára.</string>
-    <string name="message_permission_required_not_granted">Engedély megtagadva. Kérlek engedélyezd az rendszer beállításainál.</string>
     <string name="msg_add_one_wallet">Kérlek edj meg egy pénztárcát</string>
     <string name="msg_no_wallet_found">Nem található pénztárca</string>
     <string name="notification_action_retry">Pórbáld újra</string>
@@ -473,7 +467,6 @@
     <string name="relative_string_will_end_on">%s időpontban fog befejeződni</string>
     <string name="relative_string_will_expire_on">%s időpontban fog lejárni</string>
     <string name="service_backup_drop_box">Dropbox</string>
-    <string name="service_backup_external_memory">Telefon memória</string>
     <string name="setting_category_database_backup">Biztonsági mentés</string>
     <string name="setting_category_database_import_export">Betöltés/Mentés</string>
     <string name="setting_category_ui_appearance">Megjelenés</string>
@@ -628,8 +621,10 @@
     <string name="title_fragment_item_transfer">Átvezetés</string>
     <string name="title_fragment_item_wallet">Pénztárca</string>
     <string name="title_licenses">Licenszek</string>
-    <string name="title_request_permission">Engedély kérés</string>
     <string name="title_success">Siker</string>
     <string name="title_warning">Figyelmeztetés</string>
     <string name="total_wallet_name">Össz</string>
+    <string name="hint_export_file">"Exportálandó fájl"</string>
+    <string name="error_input_missing_output_file">"Válasszon kimeneti fájlt"</string>
+    <string name="message_backup_external_memory_removed">"A külső tárolón mentett biztonsági mentések már nem támogatottak. Nyissa meg a biztonsági mentés szakaszt, és engedélyezze egy mappa elérését a Storage Access Frameworkkel, hogy továbbra is használhassa az automatikus mentést. A meglévő mentési fájlok továbbra is visszaállíthatók ugyanabból a mappából történő importálással."</string>
 </resources>

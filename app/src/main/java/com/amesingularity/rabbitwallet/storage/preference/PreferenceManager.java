@@ -69,6 +69,8 @@ public class PreferenceManager {
 
     private static final String NOTIFICATION_PERMISSION_REQUESTED = "notification_permission_requested";
 
+    private static final String BACKUP_MIGRATION_NOTICE_PENDING = "backup_migration_notice_pending";
+
     public static final int LOCK_MODE_NONE = 0;
     public static final int LOCK_MODE_PIN = 1;
     public static final int LOCK_MODE_SEQUENCE = 2;
@@ -306,6 +308,14 @@ public class PreferenceManager {
 
     public static boolean isNotificationPermissionRequested() {
         return mPreferences.getBoolean(NOTIFICATION_PERMISSION_REQUESTED, false);
+    }
+
+    public static void setBackupMigrationNoticePending(boolean pending) {
+        mPreferences.edit().putBoolean(BACKUP_MIGRATION_NOTICE_PENDING, pending).apply();
+    }
+
+    public static boolean isBackupMigrationNoticePending() {
+        return mPreferences.getBoolean(BACKUP_MIGRATION_NOTICE_PENDING, false);
     }
 
     public static String getServiceApiKey(int service) {

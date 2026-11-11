@@ -20,5 +20,7 @@
 
 <paths>
     <external-files-path name="Attachments" path="attachments/"/>
-    <external-path name="external_files" path="."/>
+    <!-- Files exported (CSV / XLS / PDF) are created in the cache before being copied inside
+         the document chosen by the user with the storage access framework. -->
+    <cache-path name="exports" path="exports/"/>
 </paths>

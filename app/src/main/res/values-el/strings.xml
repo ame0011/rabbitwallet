@@ -144,7 +144,6 @@
     <string name="hint_import_format">"Μορφή εισαγωγής"</string>
     <string name="hint_export_format">"Μορφή εξαγωγής"</string>
     <string name="hint_import_file">"Εισαγωγή αρχείου"</string>
-    <string name="hint_export_folder">"Εξαγωγή φακέλου"</string>
     <string name="hint_export_optional_columns">"Προαιρετικές στήλες"</string>
     <string name="hint_export_unique_wallet">"Ένωση συναλλαγών από διαφορετικά πορτοφόλια"</string>
     <string name="hint_iso_code">"ISO code"</string>
@@ -280,7 +279,6 @@
     <string name="error_input_missing_description">"Δώσε μια περιγραφή"</string>
     <string name="error_input_missing_format">"Επέλεξε μια μορφή αρχείου"</string>
     <string name="error_input_missing_input_file">"Επέλεξε ένα αρχείο εισαγωγής"</string>
-    <string name="error_input_missing_output_folder">"Επέλεξε ένα αρχείο εξαγωγής"</string>
 
     <string name="system_category_transfer">Μεταφορά</string>
     <string name="system_category_transfer_tax">Φόρος μεταφοράς</string>
@@ -340,16 +338,13 @@
     <string name="message_error_backend_recoverable">"Πρόβλημα σύνδεσης. Παρακαλώ προσπαθήστε ξανά."</string>
 
 
-    <string name="cover_message_backup_external_memory_title">"Η εφαρμογή μπορεί να δημιουργήσει και να επανακτήσει τα αντίγραφα κατευθείαν από την εξωτερική μνήμη της συσκευής."</string>
     <string name="cover_message_backup_dropbox_title">"Η εφαρμογή μπορεί να δημιουργήσει και να επανακτήσει τα αντίγραφα από το προσωπικό σας λογαριασμό Dropbox."</string>
-    <string name="cover_message_backup_external_memory_button">"Συνέχεια"</string>
     <string name="cover_message_backup_dropbox_button">"Σύνδεση"</string>
 
     <string name="empty_message_secondary_panel">"Επέλεξε ένα στοιχείο από τα αριστερά για να δεις λεπτομέρειες"</string>
     <string name="empty_message_backup_cover">"Επέλεξε την υπηρεσία που θες να χρησιμοποιήσεις για αποθήκευση και επαναφορά των προσωπικών σου αντιγράφων"</string>
 
     <string name="title_warning">"Προειδοποίηση"</string>
-    <string name="title_request_permission">"Αίτημα άδειας"</string>
     <string name="title_backup_create">"Δημιούργησε αντίγραφο"</string>
     <string name="title_backup_creation">"Γίνεται δημιουργία αντιγράφου"</string>
     <string name="title_backup_restore">"Επανέφερε αντίγραφο"</string>
@@ -369,8 +364,6 @@
     <string name="message_multiply_currency_decimals">"Τα ποσά στη βάση δεδομένων πρέπει να έχουν ενημερωθεί για να ταιριάζουν με το νέο πλήθος δεκαδικών ψηφίων. Η διαδικασία αυτή μπορεί να πάρει λίγη ώρα. Αν θέλετε μπορείτε να παραλείψετε αυτή την ενημέρωση αλλά τα ποσά θα εμφανίζονται ως διαιρεμένα κατά %d μετά την αλλαγή."</string>
     <string name="message_divide_currency_decimals">"Τα ποσά στη βάση δεδομένων πρέπει να έχουν ενημερωθεί για να ταιριάζουν με το νέο πλήθος δεκαδικών ψηφίων. Η διαδικασία αυτή μπορεί να πάρει λίγη ώρα. Αν θέλετε μπορείτε να παραλείψετε αυτή την ενημέρωση αλλά τα ποσά θα εμφανίζονται ως πολλαπλασιασμένα κατά %d μετά την αλλαγή. Εάν τα ποσά ενημερωθούν, κάποιες πληροφορίες σχετικά με το δεκαδικό μέρος θα χαθούν."</string>
     <string name="message_backend_create_folder">"Εισάγετε το όνομα του φακέλου που θέλετε να δημιουργήσετε."</string>
-    <string name="message_permission_required_external_storage">"Απαιτείτε η άδεια για πρόσβαση στην εξωτερική μνήμη ώστε να γίνει ανάγνωση και εγγραφή των αρχείων. Παρακαλώ ενεργοποιήστε την άδεια."</string>
-    <string name="message_permission_required_not_granted">"Η άδεια απορρίφθηκε. Παρακαλώ πηγαίνετε στις ρυθμίσεις εφαρμογής και ενεργοποιήστε την."</string>
     <string name="message_backup_create">"Είστε σίγουροι ότι θέλετε να δημιουργήσετε ένα νέο αντίγραφο ασφαλείας; Η διαδικασία δεν μπορεί να σταματήσει. Αν θέλετε μπορείτε να βάλετε κωδικό για να προστατέψετε το αντίγραφο."</string>
     <string name="message_backup_restore_standard">"Είστε σίγουροι ότι θέλετε να επαναφέρετε αυτό το αντίγραφο ασφαλείας; Όλα τα τρέχοντα δεδομένα θα χαθούν και η διαδικασία δεν μπορεί να σταματήσει. Συνέχεια;"</string>
     <string name="message_backup_restore_protected">"Είστε σίγουροι ότι θέλετε να επαναφέρετε αυτό το αντίγραφο ασφαλείας; Όλα τα τρέχοντα δεδομένα θα χαθούν και η διαδικασία δεν μπορεί να σταματήσει. Το αντίγραφο προστατεύεται με κωδικό, παρακαλώ εισάγετέ τον και συνεχίστε."</string>
@@ -447,7 +440,6 @@
     <string name="spinner_item_end_date">"Μέχρι:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"Εξωτερική μνήμη"</string>
 
     <string name="setting_title_user_interface">"Διεπαφή Χρήστη"</string>
     <string name="setting_title_utility">"Χρήσιμες Δυνατότητες"</string>
@@ -693,4 +685,7 @@
     <string name="activity_donation_action_contribute_content">"Ο κώδικας είναι δημόσιος και όλοι μπορούν να συνεισφέρουν"</string>
     <string name="activity_donation_final_content">"Κάθε συνεισφορά, χρηματική είτε μη-χρηματική, είναι το ίδιο σημαντική και ουσιώδης για εμένα και την εφαρμογή. Ελπίζω να την ευχαριστηθείτε και ευχαριστώ ξανά που επιλέγετε να χρησιμοποιείτε αυτή την εφαρμογή!"</string>
 
+    <string name="hint_export_file">"Αρχείο για εξαγωγή"</string>
+    <string name="error_input_missing_output_file">"Επιλέξτε αρχείο εξόδου"</string>
+    <string name="message_backup_external_memory_removed">"Τα αντίγραφα ασφαλείας στην εξωτερική μνήμη δεν υποστηρίζονται πλέον. Ανοίξτε την ενότητα αντιγράφων ασφαλείας και παραχωρήστε πρόσβαση σε έναν φάκελο μέσω του Storage Access Framework για να συνεχίσετε να χρησιμοποιείτε το αυτόματο αντίγραφο ασφαλείας. Τα υπάρχοντα αρχεία αντιγράφων μπορούν ακόμη να επαναφερθούν εισάγοντάς τα από τον ίδιο φάκελο."</string>
 </resources>

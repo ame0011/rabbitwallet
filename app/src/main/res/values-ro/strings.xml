@@ -136,4 +136,7 @@
     <string name="about_hint_version">"Versiunea"</string>
     <string name="about_hint_changelog">"Info modificări"</string>
     <string name="about_hint_translators">"Traducători"</string>
+    <string name="hint_export_file">"Fișier de exportat"</string>
+    <string name="error_input_missing_output_file">"Selectați un fișier de ieșire"</string>
+    <string name="message_backup_external_memory_removed">"Copiile de siguranță salvate în stocarea externă nu mai sunt acceptate. Deschideți secțiunea de copii de siguranță și acordați acces la un folder prin Storage Access Framework pentru a continua să folosiți copia automată. Fișierele de copie existente pot fi încă restaurate importându-le din același folder."</string>
 </resources>

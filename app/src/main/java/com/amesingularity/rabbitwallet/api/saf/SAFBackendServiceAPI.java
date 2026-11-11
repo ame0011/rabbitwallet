@@ -212,11 +212,16 @@ public class SAFBackendServiceAPI extends AbstractBackendServiceAPI<SAFFile> {
     }
 
     @Override
-    public SAFFile newFolder(SAFFile parent, String name) throws BackendException {
-        DocumentFile docParent = DocumentFile.fromTreeUri(mContext, parent.getUri());
+    public SAFFile newFolder(@Nullable SAFFile parent, String name) throws BackendException {
+        DocumentFile docParent;
+        if (parent == null) {
+            docParent = mRoot;
+        } else {
+            docParent = DocumentFile.fromTreeUri(mContext, parent.getUri());
+        }
         if (docParent == null) {
             throw new BackendException(
-                    String.format("Couldn't access parent '%s'", parent.getUri())
+                    String.format("Couldn't access parent '%s'", parent != null ? parent.getUri() : "root")
             );
         }
         DocumentFile docFolder = docParent.createDirectory(name);

@@ -152,4 +152,7 @@
     <string name="about_hint_version">"Verzia"</string>
     <string name="about_hint_changelog">"Zoznam zmien"</string>
     <string name="about_hint_translators">"Prekladatelia"</string>
+    <string name="hint_export_file">"Súbor na export"</string>
+    <string name="error_input_missing_output_file">"Vyberte výstupný súbor"</string>
+    <string name="message_backup_external_memory_removed">"Zálohy uložené v externom úložisku už nie sú podporované. Otvorte sekciu záloh a povoľte prístup k priečinku cez Storage Access Framework, aby ste mohli naďalej používať automatickú zálohu. Existujúce záložné súbory je stále možné obnoviť importovaním z toho istého priečinka."</string>
 </resources>

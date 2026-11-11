@@ -130,6 +130,22 @@ public class MainActivity extends BaseActivity implements DrawerController, Acco
         initializeUi();
         loadUi(savedInstanceState);
         registerReceiver();
+        showBackupMigrationNotice();
+    }
+
+    /**
+     * Show a one time message if the automatic backup was configured on the external storage
+     * backend, which is not available anymore.
+     */
+    private void showBackupMigrationNotice() {
+        if (PreferenceManager.isBackupMigrationNoticePending()) {
+            PreferenceManager.setBackupMigrationNoticePending(false);
+            ThemedDialog.buildMaterialDialog(this)
+                    .title(R.string.title_warning)
+                    .content(R.string.message_backup_external_memory_removed)
+                    .positiveText(android.R.string.ok)
+                    .show();
+        }
     }
 
     /**

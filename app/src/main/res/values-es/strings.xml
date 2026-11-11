@@ -152,4 +152,7 @@
     <string name="about_hint_version">"Versión"</string>
     <string name="about_hint_changelog">"Historial de cambios "</string>
     <string name="about_hint_translators">"Traductores"</string>
+    <string name="hint_export_file">"Archivo a exportar"</string>
+    <string name="error_input_missing_output_file">"Selecciona un archivo de salida"</string>
+    <string name="message_backup_external_memory_removed">"Las copias de seguridad guardadas en el almacenamiento externo ya no son compatibles. Abre la sección de copias de seguridad y concede acceso a una carpeta con el Marco de Acceso al Almacenamiento para seguir usando la copia automática. Los archivos de copia existentes todavía se pueden restaurar importándolos desde la misma carpeta."</string>
 </resources>

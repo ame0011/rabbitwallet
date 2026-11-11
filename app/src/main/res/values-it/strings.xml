@@ -144,7 +144,6 @@
     <string name="hint_import_format">"Formato file"</string>
     <string name="hint_export_format">"Formato file"</string>
     <string name="hint_import_file">"File da importare"</string>
-    <string name="hint_export_folder">"Cartella di destinazione"</string>
     <string name="hint_export_optional_columns">"Colonne facoltative"</string>
     <string name="hint_export_unique_wallet">"Unisci transazioni da portafogli differenti"</string>
     <string name="hint_iso_code">"Codice ISO"</string>
@@ -281,7 +280,6 @@
     <string name="error_input_missing_description">"Fornisci una descrizione"</string>
     <string name="error_input_missing_format">"Seleziona un formato"</string>
     <string name="error_input_missing_input_file">"Seleziona un file di input"</string>
-    <string name="error_input_missing_output_folder">"Seleziona una cartella di destinazione"</string>
 
     <string name="system_category_transfer">Trasferisci</string>
     <string name="system_category_transfer_tax">Trasferisci tassa</string>
@@ -340,16 +338,13 @@
     <string name="message_no_file_found">"Nessun file trovato"</string>
     <string name="message_error_backend_recoverable">"Errore di connessione. Riprova."</string>
 
-    <string name="cover_message_backup_external_memory_title">"L'applicazione può creare e rigenerare il backup direttamente dalla memoria esterna del dispositivo"</string>
     <string name="cover_message_backup_dropbox_title">"L'applicazione può creare e rigenerare il backup direttamente dal tuo account Dropbox personale"</string>
-    <string name="cover_message_backup_external_memory_button">"Continua"</string>
     <string name="cover_message_backup_dropbox_button">"Login"</string>
 
     <string name="empty_message_secondary_panel">"Seleziona un elemento dal pannello di sinistra per vedere i dettagli"</string>
     <string name="empty_message_backup_cover">"Selezione il servizio che vuoi utilizzare per archiviare e recuperare il tuo backup"</string>
 
     <string name="title_warning">"Attenzione"</string>
-    <string name="title_request_permission">"Permesso richiesto"</string>
     <string name="title_backup_create">"Crea backup"</string>
     <string name="title_backup_creation">"Creazione backup"</string>
     <string name="title_backup_restore">"Ripristina backup"</string>
@@ -369,8 +364,6 @@
     <string name="message_multiply_currency_decimals">"Gli importi nel database devono essere aggiornati al fine di corrispondere al nuovo numero di cifre decimali. L'operazione puo richiedere del tempo. Se vuoi puoi saltare l'aggiornamento ma visualizzerai gli importi come divisi per %d dopo la modifica."</string>
     <string name="message_divide_currency_decimals">"Gli importi nel database devono essere aggiornati al fine di corrispondere al nuovo numero di cifre decimali. L'operazione puo richiedere del tempo. Se vuoi puoi saltare l'aggiornamento ma visualizzerai gli importi come moltiplicati per %d dopo la modifica. Se gli importi verranno aggiornati, alcune informazioni sulla attuale parte decimale verranno perse."</string>
     <string name="message_backend_create_folder">"Inserisci il nome della cartella che vuoi creare"</string>
-    <string name="message_permission_required_external_storage">"Il permesso per accedere alla memoria esterna è necessario per leggere e scrivere i file. Si prega di abilitarlo."</string>
-    <string name="message_permission_required_not_granted">"Permesso negato. Vai alle impostazioni dell'applicazione e abilitalo."</string>
     <string name="message_backup_create">"Sei sicuro di voler creare un nuovo backup? L'operazione non può essere interrotta. Se lo desideri, puoi impostare una password per proteggere il file di backup."</string>
     <string name="message_backup_restore_standard">"Sei sicuro di voler ripristinare questo backup? Tutti i dati correnti andranno persi e l'operazione non può essere interrotta. Procedere?"</string>
     <string name="message_backup_restore_protected">"Sei sicuro di voler ripristinare questo backup? Tutti i dati correnti andranno persi e l'operazione non può essere interrotta. Il backup è protetto da una password, per favore inseriscilo e procedi."</string>
@@ -447,7 +440,6 @@
     <string name="spinner_item_end_date">"A:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"Memoria esterna"</string>
 
     <string name="setting_title_user_interface">"Interfaccia utente"</string>
     <string name="setting_title_utility">"Utilità"</string>
@@ -693,4 +685,7 @@
     <string name="activity_donation_action_contribute_content">"Il codice sorgente è pubblico e chiunque può collaborare"</string>
     <string name="activity_donation_final_content">"Qualsiasi contributo, monetario o non-monetario, è uguale e fa una grande differenza per me. Spero che questa applicazione ti piacerà e grazie ancora per aver scelto di usarla."</string>
 
+    <string name="hint_export_file">"File da esportare"</string>
+    <string name="error_input_missing_output_file">"Seleziona un file di output"</string>
+    <string name="message_backup_external_memory_removed">"I backup salvati nella memoria esterna non sono più supportati. Apri la sezione backup e concedi l'accesso a una cartella tramite lo Storage Access Framework per continuare a usare il backup automatico. I file di backup esistenti possono ancora essere ripristinati importandoli dalla stessa cartella."</string>
 </resources>

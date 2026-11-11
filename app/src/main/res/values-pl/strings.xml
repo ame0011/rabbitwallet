@@ -142,7 +142,6 @@
     <string name="hint_import_format">"Zaimportuj format"</string>
     <string name="hint_export_format">"Eksportuj format"</string>
     <string name="hint_import_file">"Plik do importu"</string>
-    <string name="hint_export_folder">"Wyeksportuj folder"</string>
     <string name="hint_export_optional_columns">"Opcjonalne kolumny"</string>
     <string name="hint_export_unique_wallet">"Połącz transakcje z innych portfeli"</string>
     <string name="hint_data_format_csv" translatable="false">"CSV"</string>
@@ -281,7 +280,6 @@
     <string name="error_input_missing_description">"Podaj opis"</string>
     <string name="error_input_missing_format">"Wybierz format pliku"</string>
     <string name="error_input_missing_input_file">"Wybierz plik wejściowy"</string>
-    <string name="error_input_missing_output_folder">"Wybierz plik wyjściowy"</string>
 
     <string name="system_category_transfer">Przelew</string>
     <string name="system_category_transfer_tax">Przelew podatkowy</string>
@@ -340,16 +338,13 @@
     <string name="message_no_file_found">"Nie znaleziono pliku"</string>
     <string name="message_error_backend_recoverable">"Problem z połączeniem. Spróbuj ponownie."</string>
 
-    <string name="cover_message_backup_external_memory_title">"Aplikacja może tworzyć i przywracać kopie zapasowe bezpośrednio z zewnętrznej pamięci urządzenia"</string>
     <string name="cover_message_backup_dropbox_title">"Aplikacja może tworzyć i przywracać kopie zapasowe z osobistego konta Dropbox"</string>
-    <string name="cover_message_backup_external_memory_button">"Kontunuuj"</string>
     <string name="cover_message_backup_dropbox_button">"Login"</string>
 
     <string name="empty_message_secondary_panel">"Wybierz jeden element z lewego panelu, aby zobaczyć szczegóły"</string>
     <string name="empty_message_backup_cover">"Wybierz usługę, której chcesz używać do przechowywania i odzyskiwania osobistych kopii zapasowych"</string>
 
     <string name="title_warning">"Osrzeżenie"</string>
-    <string name="title_request_permission">"Pozwolenie wymagane"</string>
     <string name="title_backup_create">"Utwórz kopię zapasową"</string>
     <string name="title_backup_creation">"Tworzenie kopii zapasowej"</string>
     <string name="title_backup_restore">"Odtwórz z kopii zapasowej"</string>
@@ -369,8 +364,6 @@
     <string name="message_multiply_currency_decimals">"Kwoty w bazie danych muszą zostać zaktualizowane, aby pasowały do nowej liczby cyfr dziesiętnych. Operacja może trochę potrwać. Jeśli chcesz, możesz pominąć aktualizację, ale kwoty zostaną wyświetlone po podzieleniu przez %d."</string>
     <string name="message_divide_currency_decimals">"Kwoty w bazie danych muszą zostać zaktualizowane, aby pasowały do nowej liczby cyfr dziesiętnych. Operacja może trochę potrwać. Jeśli chcesz, możesz pominąć aktualizację, ale kwoty zostaną wyświetlone po pomnożeniu przez %d. Jeśli kwoty zostaną zaktualizowane, niektóre informacje o ich bieżącej części ułamkowej zostaną utracone."</string>
     <string name="message_backend_create_folder">"Podaj nazwę folderu, który chcesz utworzyć"</string>
-    <string name="message_permission_required_external_storage">"Uprawnienia na dostęp do pamięci zewnętrznej jest wymagane do odczytu i zapisu plików. Proszę je włączyć."</string>
-    <string name="message_permission_required_not_granted">"Odnowa uprawnień. Proszę je włączyć w ustawieniach aplikacji."</string>
     <string name="message_backup_create">"Czy na pewno chcesz utworzyć nową kopię zapasową? Operacji nie można zatrzymać. Jeśli chcesz, możesz ustawić hasło, aby chronić plik kopii zapasowej."</string>
     <string name="message_backup_restore_standard">"Czy na pewno chcesz przywrócić tę kopię zapasową? Wszystkie bieżące dane zostaną utracone i operacji nie można zatrzymać. Kontynuować?"</string>
     <string name="message_backup_restore_protected">"Czy na pewno chcesz przywrócić tę kopię zapasową? Wszystkie bieżące dane zostaną utracone i operacji nie można zatrzymać. Kopia zapasowa jest chroniona hasłem, wprowadź je i kontynuuj."</string>
@@ -449,7 +442,6 @@
     <string name="spinner_item_end_date">"Do:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"Pamięć zewnętrzna"</string>
 
     <string name="setting_title_user_interface">"Interfejs użytkownika"</string>
     <string name="setting_title_utility">"Narzędzia"</string>
@@ -696,4 +688,7 @@
     <string name="activity_donation_action_contribute_content">"Kod źródłowy jest publiczny i każdy może współpracować"</string>
     <string name="activity_donation_final_content">"Każdy wkład, pieniężny lub niepieniężny, jest równy i stanowi dla mnie istotną różnicę. Mam nadzieję, że Ci się spodoba i jeszcze raz dziękuję za wybranie użycia tej aplikacji."</string>
 
+    <string name="hint_export_file">"Plik do eksportu"</string>
+    <string name="error_input_missing_output_file">"Wybierz plik wyjściowy"</string>
+    <string name="message_backup_external_memory_removed">"Kopie zapasowe zapisywane w pamięci zewnętrznej nie są już obsługiwane. Otwórz sekcję kopii zapasowych i udziel dostępu do folderu za pomocą Storage Access Framework, aby nadal korzystać z automatycznej kopii. Istniejące pliki kopii można nadal przywrócić, importując je z tego samego folderu."</string>
 </resources>

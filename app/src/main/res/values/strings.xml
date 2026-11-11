@@ -144,7 +144,7 @@
     <string name="hint_import_format">"Import format"</string>
     <string name="hint_export_format">"Export format"</string>
     <string name="hint_import_file">"File to import"</string>
-    <string name="hint_export_folder">"Export folder"</string>
+    <string name="hint_export_file">"File to export"</string>
     <string name="hint_export_optional_columns">"Optional columns"</string>
     <string name="hint_export_unique_wallet">"Join transactions from different wallets"</string>
     <string name="hint_data_format_csv" translatable="false">"CSV"</string>
@@ -284,7 +284,7 @@
     <string name="error_input_missing_description">"Provide a description"</string>
     <string name="error_input_missing_format">"Select a file format"</string>
     <string name="error_input_missing_input_file">"Select an input file"</string>
-    <string name="error_input_missing_output_folder">"Select an output folder"</string>
+    <string name="error_input_missing_output_file">"Select an output file"</string>
 
     <string name="system_category_transfer">Transfer</string>
     <string name="system_category_transfer_tax">Transfer tax</string>
@@ -344,9 +344,7 @@
     <string name="message_error_backend_recoverable">"Connection problem. Please retry."</string>
 
     <string name="cover_message_backup_storage_access_framework_title">"The application can create and restore the backups from any document provider (e.g. Nextcloud, Dropbox or your filesystem)"</string>
-    <string name="cover_message_backup_external_memory_title">"The application can create and restore the backups directly from the external storage of the device"</string>
     <string name="cover_message_backup_dropbox_title">"The application can create and restore the backups from your personal Dropbox account"</string>
-    <string name="cover_message_backup_external_memory_button">"Continue"</string>
     <string name="cover_message_backup_storage_access_framework_button">"Continue"</string>
     <string name="cover_message_backup_dropbox_button">"Login"</string>
 
@@ -354,7 +352,6 @@
     <string name="empty_message_backup_cover">"Select the service that you want to use to store and retrieve your personal backups"</string>
 
     <string name="title_warning">"Warning"</string>
-    <string name="title_request_permission">"Permission request"</string>
     <string name="title_backup_create">"Create backup"</string>
     <string name="title_backup_creation">"Creating backup"</string>
     <string name="title_backup_restore">"Restore backup"</string>
@@ -374,9 +371,8 @@
     <string name="message_multiply_currency_decimals">"The amounts in the database must be updated in order to match the new number of decimal digits. The operation may take some time. If you want you can skip the update but the amounts will be displayed as divided by %d after the change."</string>
     <string name="message_divide_currency_decimals">"The amounts in the database must be updated in order to match the new number of decimal digits. The operation may take some time. If you want you can skip the update but the amounts will be displayed as multiplied by %d after the change. If the amounts are updated, some information about their current fractional part will be lost."</string>
     <string name="message_backend_create_folder">"Insert the name of the folder that you want to create"</string>
-    <string name="message_permission_required_external_storage">"The permission to access the external storage is required in order to read and write files. Please enable it."</string>
-    <string name="message_permission_required_not_granted">"Permission denied. Please go to application setting and enable it."</string>
     <string name="message_backup_create">"Are you sure you want create a new backup? The operation cannot be stopped. If you want you can set a password to protect the backup file."</string>
+    <string name="message_backup_external_memory_removed">"Backups saved in the external storage are no longer supported. Open the backup section and grant access to a folder with the storage access framework to keep using the automatic backup. Existing backup files can still be restored by importing them from the same folder."</string>
     <string name="message_backup_restore_standard">"Are you sure you want to restore this backup? All current data will be lost and the operation cannot be stopped. Proceed?"</string>
     <string name="message_backup_restore_protected">"Are you sure you want to restore this backup? All current data will be lost and the operation cannot be stopped. The backup is protected by a password, please enter it and proceed."</string>
     <string name="message_backup_restore_legacy">"Are you sure you want to restore this backup? All current data will be lost and the operation cannot be stopped. WARNING!: this is a legacy backup and the application may fail to import it. Proceed?"</string>
@@ -453,7 +449,6 @@
     <string name="spinner_item_end_date">"To:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"External Memory"</string>
     <string name="service_backup_storage_access_framework" translatable="false">"Storage Access Framework"</string>
 
     <string name="setting_title_user_interface">"User interface"</string>

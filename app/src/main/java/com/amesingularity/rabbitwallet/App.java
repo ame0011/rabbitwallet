@@ -46,7 +46,19 @@ public class App extends Application {
         ThemeEngine.initialize(this);
         CurrencyManager.initialize(this);
         NotificationContract.initializeNotificationChannels(this);
+        migrateLegacyBackupSettings();
         initializeScheduledTimers();
+    }
+
+    /**
+     * The backend that used to save the backups in the external storage has been removed: the
+     * automatic backup configuration of that backend is dropped and a notice is shown to the
+     * user the next time the application is opened.
+     */
+    private void migrateLegacyBackupSettings() {
+        if (BackendManager.retireExternalMemoryBackend()) {
+            PreferenceManager.setBackupMigrationNoticePending(true);
+        }
     }
 
     private void initializeScheduledTimers() {

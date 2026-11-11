@@ -41,6 +41,12 @@ public class BackendManager {
     private static final String BACKEND_AUTO_BACKUP_PASSWORD = "auto_backup_password_";
     private static final String BACKEND_AUTO_BACKUP_LAST_TIME = "auto_backup_last_time_";
 
+    /**
+     * Backend that used to store the backups directly in the external storage. It is not
+     * available anymore because the scoped storage does not allow to write there.
+     */
+    private static final String RETIRED_BACKEND_EXTERNAL_MEMORY = "external_memory";
+
     private static SharedPreferences mPreferences;
 
     public static void initialize(Context context) {
@@ -50,6 +56,8 @@ public class BackendManager {
     public static void setAutoBackupEnabled(String backendId, boolean enabled) {
         mPreferences.edit().putBoolean(BACKEND_AUTO_BACKUP_ENABLED + backendId, enabled).apply();
         Set<String> backendIdSet = mPreferences.getStringSet(AUTO_BACKUP_ENABLED_SERVICES, null);
+        // the set returned by the preference manager must not be modified: work on a copy
+        backendIdSet = backendIdSet != null ? new HashSet<>(backendIdSet) : null;
         if (enabled) {
             if (backendIdSet == null) {
                 backendIdSet = new HashSet<>();
@@ -64,6 +72,19 @@ public class BackendManager {
                     .apply();
         }
         mPreferences.edit().putStringSet(AUTO_BACKUP_ENABLED_SERVICES, backendIdSet).apply();
+    }
+
+    /**
+     * Disable the automatic backup for the backend that used to write the files in the external
+     * storage, since that backend is not available anymore.
+     * @return true if the automatic backup was enabled for the retired backend.
+     */
+    public static boolean retireExternalMemoryBackend() {
+        if (!isAutoBackupEnabled(RETIRED_BACKEND_EXTERNAL_MEMORY)) {
+            return false;
+        }
+        setAutoBackupEnabled(RETIRED_BACKEND_EXTERNAL_MEMORY, false);
+        return true;
     }
 
     public static void setAutoBackupOnWiFiOnly(String backendId, boolean wifiOnly) {

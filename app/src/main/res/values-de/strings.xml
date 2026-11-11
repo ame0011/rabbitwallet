@@ -264,8 +264,6 @@
     <string name="bottom_sheet_icon_picker_title">Symbol personalisieren</string>
     <string name="cover_message_backup_dropbox_button">Anmelden</string>
     <string name="cover_message_backup_dropbox_title">Die Anwendung kann die Sicherungen auf deinem Dropbox-Konto erstellen und abrufen</string>
-    <string name="cover_message_backup_external_memory_button">Weiter</string>
-    <string name="cover_message_backup_external_memory_title">Die Anwendung kann die Sicherungen direkt auf dem externen Speicher des Gerätes erstellen und abrufen</string>
     <string name="description_attachment_icon">Anhang</string>
     <string name="description_backspace_icon">Zurück</string>
     <string name="description_backup_service_icon">Sicherungsservice</string>
@@ -314,7 +312,6 @@
     <string name="error_input_missing_format">Wähle ein Dateiformat aus</string>
     <string name="error_input_missing_input_file">Wähle eine Datei</string>
     <string name="error_input_missing_multiple_wallets">Wähle mindestens eine Geldbörse aus</string>
-    <string name="error_input_missing_output_folder">Wähle den Ausgabeordner</string>
     <string name="error_input_missing_start_date">Wähle das Anfangsdatum</string>
     <string name="error_input_name_not_valid">Kein gültiger Name</string>
     <string name="header_debts_archived">Archiviert</string>
@@ -348,7 +345,6 @@
     <string name="hint_directory">Ordner</string>
     <string name="hint_exchange_rate">Wechselkurs</string>
     <string name="hint_expenses">Ausgaben</string>
-    <string name="hint_export_folder">Exportordner</string>
     <string name="hint_export_format">Exportformat</string>
     <string name="hint_export_optional_columns">Optionale Spalten</string>
     <string name="hint_export_unique_wallet">Transaktionen von anderer Geldbörse hinzufügen</string>
@@ -462,7 +458,6 @@
     <string name="message_error_update_category_not_consistent">Die übergeordnete Kategorie, die du ausgewählt hast, ist nicht vom gleichen Typ wie diese.</string>
     <string name="title_warning">Warnung</string>
     <string name="title_success">Erfolg</string>
-    <string name="title_request_permission">Berechtigungsanfrage</string>
     <string name="title_licenses">Lizenz</string>
     <string name="title_fragment_item_wallet">Geldbörse</string>
     <string name="title_fragment_item_transfer">Transfer</string>
@@ -563,7 +558,6 @@
     <string name="setting_category_ui_appearance">Aussehen</string>
     <string name="setting_category_database_import_export">Import/Export</string>
     <string name="setting_category_database_backup">Sicherungen</string>
-    <string name="service_backup_external_memory">Externer Speicher</string>
     <string name="service_backup_drop_box">Dropbox</string>
     <string name="relative_string_will_expire_on">Wird am %s ablaufen</string>
     <string name="relative_string_will_end_on">Wird am %s enden</string>
@@ -632,8 +626,6 @@
     <string name="notification_channel_name_error">Fehler</string>
     <string name="notification_channel_name_backup">Sicherung</string>
     <string name="notification_action_retry">Erneut Versuchen</string>
-    <string name="message_permission_required_not_granted">Fehlende Berechtigung. Bitte vergebe sie in den Anwendungseinstellungen.</string>
-    <string name="message_permission_required_external_storage">Fehlende Berechtigung. Bitte erlaube den Zugriff auf externen Speicher, damit die App Dateien lesen und schreiben kann.</string>
     <string name="message_no_saving_found">Keine Ersparnisse gefunden</string>
     <string name="message_no_place_found">Keine Orte gefunden</string>
     <string name="message_no_person_found">Keine Personen gefunden</string>
@@ -660,4 +652,7 @@
     <string name="notification_title_backup_restoring_failed">Wiederherstellung fehlgeschlagen</string>
     <string name="help_verify_created_pin_code_failed">PIN stimmt nicht überein. Lege eine neue PIN an.</string>
     <string name="recurrence_type_monthly_repeat_same_day">Jeden Monat am selben Tag</string>
+    <string name="hint_export_file">"Exportdatei"</string>
+    <string name="error_input_missing_output_file">"Wählen Sie eine Ausgabedatei"</string>
+    <string name="message_backup_external_memory_removed">"Sicherungen im externen Speicher werden nicht mehr unterstützt. Öffnen Sie den Bereich Sicherung und erlauben Sie dem Storage Access Framework den Zugriff auf einen Ordner, um die automatische Sicherung weiter zu verwenden. Vorhandene Sicherungsdateien können weiterhin wiederhergestellt werden, indem sie aus demselben Ordner importiert werden."</string>
 </resources>

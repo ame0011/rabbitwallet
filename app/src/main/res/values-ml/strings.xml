@@ -128,7 +128,6 @@
     <string name="hint_import_format">"ഫോർമാറ്റ് ഇറക്കുമതി ചെയ്യുക"</string>
     <string name="hint_export_format">"എക്സ്പോർട്ട് ഫോർമാറ്റ്"</string>
     <string name="hint_import_file">"ഇമ്പോർട്ടുചെയ്യാനുള്ള ഫയൽ"</string>
-    <string name="hint_export_folder">"ഫോൾഡർ എക്സ്പോർട്ടുചെയ്യുക"</string>
     <string name="hint_export_optional_columns">"ഓപ്ഷണൽ നിരകൾ"</string>
     <string name="hint_export_unique_wallet">"വ്യത്യസ്ത വാലറ്റുകളിൽ നിന്നുള്ള ഇടപാടുകളിൽ ചേരുക"</string>
     <string name="hint_data_format_csv" translatable="false">"CSV"</string>
@@ -267,7 +266,6 @@
     <string name="error_input_missing_description">"ഒരു വിവരണം നൽകുക"</string>
     <string name="error_input_missing_format">"ഒരു ഫയൽ ഫോർമാറ്റ് തിരഞ്ഞെടുക്കുക"</string>
     <string name="error_input_missing_input_file">"ഒരു ഇൻപുട്ട് ഫയൽ തിരഞ്ഞെടുക്കുക"</string>
-    <string name="error_input_missing_output_folder">"ഒരു output ട്ട്പുട്ട് ഫോൾഡർ തിരഞ്ഞെടുക്കുക"</string>
 
     <string name="system_category_transfer">കൈമാറ്റം</string>
     <string name="system_category_transfer_tax">ട്രാൻസ്ഫർ ടാക്സ്</string>
@@ -326,16 +324,13 @@
     <string name="message_no_file_found">"ഫയലുകളൊന്നും കണ്ടെത്തിയില്ല"</string>
     <string name="message_error_backend_recoverable">"കണക്ഷൻ പ്രശ്നം. ദയവായി വീണ്ടും ശ്രമിക്കുക."</string>
 
-    <string name="cover_message_backup_external_memory_title">"ഉപകരണത്തിന്റെ ബാഹ്യ സംഭരണത്തിൽ നിന്ന് നേരിട്ട് അപ്ലിക്കേഷന് ബാക്കപ്പുകൾ സൃഷ്ടിക്കാനും പുന restore സ്ഥാപിക്കാനും കഴിയും"</string>
     <string name="cover_message_backup_dropbox_title">"നിങ്ങളുടെ സ്വകാര്യ ഡ്രോപ്പ്ബോക്സ് അക്ക from ണ്ടിൽ നിന്ന് ബാക്കപ്പുകൾ സൃഷ്ടിക്കാനും പുന restore സ്ഥാപിക്കാനും അപ്ലിക്കേഷന് കഴിയും"</string>
-    <string name="cover_message_backup_external_memory_button">"തുടരുക"</string>
     <string name="cover_message_backup_dropbox_button">"ലോഗിൻ"</string>
 
     <string name="empty_message_secondary_panel">"വിശദാംശങ്ങൾ കാണുന്നതിന് ഇടത് പാനലിൽ നിന്ന് ഒരു ഘടകം തിരഞ്ഞെടുക്കുക"</string>
     <string name="empty_message_backup_cover">"നിങ്ങളുടെ സ്വകാര്യ ബാക്കപ്പുകൾ സംഭരിക്കുന്നതിനും വീണ്ടെടുക്കുന്നതിനും നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന സേവനം തിരഞ്ഞെടുക്കുക"</string>
 
     <string name="title_warning">"മുന്നറിയിപ്പ്"</string>
-    <string name="title_request_permission">"അനുമതി അഭ്യർത്ഥന"</string>
     <string name="title_backup_create">"ബാക്കപ്പ് സൃഷ്ടിക്കുക"</string>
     <string name="title_backup_creation">"ബാക്കപ്പ് സൃഷ്ടിക്കുന്നു"</string>
     <string name="title_backup_restore">"ബാക്കപ്പ് പുന ore സ്ഥാപിക്കുക"</string>
@@ -355,8 +350,6 @@
     <string name="message_multiply_currency_decimals">"പുതിയ ദശാംശ അക്കങ്ങളുമായി പൊരുത്തപ്പെടുന്നതിന് ഡാറ്റാബേസിലെ തുകകൾ അപ്ഡേറ്റ് ചെയ്തിരിക്കണം. പ്രവർത്തനത്തിന് കുറച്ച് സമയമെടുക്കും. നിങ്ങൾക്ക് വേണമെങ്കിൽ അപ്ഡേറ്റ് ഒഴിവാക്കാം, പക്ഷേ മാറ്റത്തിന് ശേഷം %d കൊണ്ട് വിഭജിച്ച് തുക പ്രദർശിപ്പിക്കും. "</string>
     <string name="message_divide_currency_decimals">"പുതിയ ദശാംശ അക്കങ്ങളുമായി പൊരുത്തപ്പെടുന്നതിന് ഡാറ്റാബേസിലെ തുകകൾ അപ്ഡേറ്റ് ചെയ്തിരിക്കണം. പ്രവർത്തനത്തിന് കുറച്ച് സമയമെടുക്കും. നിങ്ങൾക്ക് വേണമെങ്കിൽ അപ്ഡേറ്റ് ഒഴിവാക്കാം, പക്ഷേ മാറ്റത്തിന് ശേഷം %d കൊണ്ട് ഗുണിച്ചാൽ തുകകൾ പ്രദർശിപ്പിക്കും. തുകകൾ അപ്ഡേറ്റ് ചെയ്യുകയാണെങ്കിൽ, അവയുടെ നിലവിലെ ഭിന്ന ഭാഗത്തെക്കുറിച്ചുള്ള ചില വിവരങ്ങൾ നഷ്ടപ്പെടും. "</string>
     <string name="message_backend_create_folder">"നിങ്ങൾ സൃഷ്ടിക്കാൻ ആഗ്രഹിക്കുന്ന ഫോൾഡറിന്റെ പേര് ചേർക്കുക"</string>
-    <string name="message_permission_required_external_storage">"ഫയലുകൾ വായിക്കാനും എഴുതാനും ബാഹ്യ സംഭരണം ആക്സസ് ചെയ്യുന്നതിനുള്ള അനുമതി ആവശ്യമാണ്. ദയവായി ഇത് പ്രാപ്തമാക്കുക."</string>
-    <string name="message_permission_required_not_granted">"അനുമതി നിരസിച്ചു. ദയവായി അപ്ലിക്കേഷൻ ക്രമീകരണത്തിലേക്ക് പോയി അത് പ്രവർത്തനക്ഷമമാക്കുക."</string>
     <string name="message_backup_create">"ഒരു പുതിയ ബാക്കപ്പ് സൃഷ്ടിക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ? പ്രവർത്തനം നിർത്താൻ കഴിയില്ല. നിങ്ങൾക്ക് വേണമെങ്കിൽ ബാക്കപ്പ് ഫയൽ പരിരക്ഷിക്കുന്നതിന് പാസ്വേഡ് സജ്ജമാക്കാൻ കഴിയും."</string>
     <string name="message_backup_restore_standard">"ഈ ബാക്കപ്പ് പുന restore സ്ഥാപിക്കണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? നിലവിലെ എല്ലാ ഡാറ്റയും നഷ്ടപ്പെടും, പ്രവർത്തനം നിർത്താൻ കഴിയില്ല. മുന്നോട്ട് പോകണോ?"</string>
     <string name="message_backup_restore_protected">"ഈ ബാക്കപ്പ് പുന restore സ്ഥാപിക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ? നിലവിലെ എല്ലാ ഡാറ്റയും നഷ്ടപ്പെടും, പ്രവർത്തനം നിർത്താൻ കഴിയില്ല. ബാക്കപ്പ് ഒരു പാസ്വേഡ് ഉപയോഗിച്ച് പരിരക്ഷിച്ചിരിക്കുന്നു, ദയവായി അത് നൽകി തുടരുക."</string>
@@ -433,7 +426,6 @@
     <string name="spinner_item_end_date">"സ്വീകർത്താവ്: %s"</string>
 
     <string name="service_backup_drop_box">"ഡ്രോപ്പ്ബോക്സ്"</string>
-    <string name="service_backup_external_memory">"ബാഹ്യ മെമ്മറി"</string>
 
     <string name="setting_title_user_interface">"ഉപയോക്തൃ ഇന്റർഫേസ്"</string>
     <string name="setting_title_utility">"യൂട്ടിലിറ്റികൾ"</string>
@@ -680,4 +672,7 @@
     <string name="activity_donation_action_contribute_content">"ഉറവിട കോഡ് എല്ലാവർക്കുമുള്ളതിനാൽ എല്ലാവർക്കും സഹകരിക്കാൻ കഴിയും"</string>
     <string name="activity_donation_final_content">"പണമോ പണേതരമോ ആയ എല്ലാ സംഭാവനകളും തുല്യമാണ്, എന്നെ സംബന്ധിച്ചിടത്തോളം കാര്യമായ വ്യത്യാസമുണ്ടാക്കുന്നു. നിങ്ങൾ ഇത് ആസ്വദിക്കുമെന്ന് പ്രതീക്ഷിക്കുന്നു, ഈ ആപ്ലിക്കേഷൻ ഉപയോഗിക്കാൻ തിരഞ്ഞെടുത്തതിന് വീണ്ടും നന്ദി."</string>
 
+    <string name="hint_export_file">"എക്സ്പോർട്ട് ചെയ്യേണ്ട ഫയൽ"</string>
+    <string name="error_input_missing_output_file">"ഒരു ഔട്ട്പുട്ട് ഫയൽ തിരഞ്ഞെടുക്കുക"</string>
+    <string name="message_backup_external_memory_removed">"പുറം സംഭരണത്തിൽ സൂക്ഷിച്ച ബാക്കപ്പുകൾ ഇനി പിന്തുണയ്ക്കുന്നില്ല. സ്വയംബാക്കപ്പ് തുടരാൻ ബാക്കപ്പ് വിഭാഗം തുറന്ന് സ്റ്റോറേജ് ആക്സസ് ഫ്രെയിംവർക്ക് ഉപയോഗിച്ച് ഒരു ഫോൾഡറിന് അനുമതി നൽകുക. നിലവിലുള്ള ബാക്കപ്പ് ഫയലുകൾ അതേ ഫോൾഡറിൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്ത് ഇപ്പോഴും പുനഃസ്ഥാപിക്കാം."</string>
 </resources>

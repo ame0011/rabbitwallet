@@ -144,7 +144,6 @@
     <string name="hint_import_format">"Format d'importation"</string>
     <string name="hint_export_format">"Format d'exportation"</string>
     <string name="hint_import_file">"Fichier à importer"</string>
-    <string name="hint_export_folder">"Dossier d'exportation"</string>
     <string name="hint_export_optional_columns">"Colonnes optionnelles"</string>
     <string name="hint_export_unique_wallet">"Joindre des transactions de différents portefeuilles"</string>
     <string name="hint_iso_code">"Code ISO"</string>
@@ -280,7 +279,6 @@
     <string name="error_input_missing_description">"Veuillez fournir une description"</string>
     <string name="error_input_missing_format">"Sélectionnez un format de fichier"</string>
     <string name="error_input_missing_input_file">"Sélectionnez un fichier d'entrée"</string>
-    <string name="error_input_missing_output_folder">"Sélectionnez un dossier de sortie"</string>
 
     <string name="system_category_transfer">Transfert</string>
     <string name="system_category_transfer_tax">Taxe de transfert</string>
@@ -339,16 +337,13 @@
     <string name="message_no_file_found">"Aucun fichier trouvé"</string>
     <string name="message_error_backend_recoverable">"Problème de connection. Veuillez réessayer."</string>
 
-    <string name="cover_message_backup_external_memory_title">L\'application peut créer et restaurer les sauvegardes directement depuis le stockage de votre appareil</string>
     <string name="cover_message_backup_dropbox_title">L\'application peut créer et restaurer les sauvegardes depuis votre compte Dropbox</string>
-    <string name="cover_message_backup_external_memory_button">Continuer</string>
     <string name="cover_message_backup_dropbox_button">Se connecter</string>
 
     <string name="empty_message_secondary_panel">Sélectionnez un élément sur le panneau de gauche pour voir les détails</string>
     <string name="empty_message_backup_cover">Sélectionnez le service que vous souhaitez utiliser pour stocker et retrouver vos sauvegardes</string>
 
     <string name="title_warning">Attention</string>
-    <string name="title_request_permission">Permission requise</string>
     <string name="title_backup_create">Créer une sauvegarde</string>
     <string name="title_backup_creation">Création de la sauvegarde</string>
     <string name="title_backup_restore">Restaurer une sauvegarde</string>
@@ -368,8 +363,6 @@
     <string name="message_multiply_currency_decimals">"Les montants de la base de données doivent être mis à jour pour correspondre au nouveau nombre de chiffres décimaux. L'opération peut prendre un certain temps. Si vous le souhaitez, vous pouvez ignorer la mise à jour, mais les montants seront affichés divisés par %d après le changement."</string>
     <string name="message_divide_currency_decimals">"Les montants de la base de données doivent être mis à jour pour correspondre au nouveau nombre de chiffres décimaux. L'opération peut prendre un certain temps. Si vous le souhaitez, vous pouvez ignorer la mise à jour, mais les montants seront affichés multipliés par% d après le changement. Si les montants sont mis à jour, certaines informations sur leur partie decimale actuelle seront perdues."</string>
     <string name="message_backend_create_folder">"Nom du dossier que vous voulez créer"</string>
-    <string name="message_permission_required_external_storage">"La permission d'accéder au stockage externe est requise pour pouvoir lire et écrire sur l'appareil. Veuillez l'activer."</string>
-    <string name="message_permission_required_not_granted">"Permission refusée. Veuillez modifier les permissions de l'application via les réglages."</string>
     <string name="message_backup_create">"Êtes-vous sûr de vouloir créer une nouvelle sauvegarde? L'opération ne peut pas être arrêtée. Si vous le souhaitez, vous pouvez définir un mot de passe pour protéger le fichier de sauvegarde."</string>
     <string name="message_backup_restore_standard">"Êtes-vous sûr de vouloir restaurer cette sauvegarde? Toutes les données actuelles seront perdues et l'opération ne pourra pas être arrêtée. Continuer ?"</string>
     <string name="message_backup_restore_protected">"Êtes-vous sûr de vouloir restaurer cette sauvegarde? Toutes les données actuelles seront perdues et l'opération ne pourra pas être arrêtée. La sauvegarde est protégée par un mot de passe, veuillez l’entrer pour continuer. Continuer ?"</string>
@@ -446,7 +439,6 @@
     <string name="spinner_item_end_date">"Au :   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"Mémoire externe"</string>
 
     <string name="setting_title_user_interface">"Interface"</string>
     <string name="setting_title_utility">"Utilitaires"</string>
@@ -692,4 +684,7 @@
     <string name="activity_donation_action_contribute_content">Le code source est public et tout le monde peut venir y contribuer</string>
     <string name="activity_donation_final_content">"Chaque contribution, monétaire ou non monétaire est égale et fait une différence substantielle pour moi. J'espère que vous l'apprécierez et merci encore d'avoir choisi d'utiliser cette application."</string>
 
+    <string name="hint_export_file">"Fichier à exporter"</string>
+    <string name="error_input_missing_output_file">"Sélectionnez un fichier de sortie"</string>
+    <string name="message_backup_external_memory_removed">"Les sauvegardes enregistrées dans le stockage externe ne sont plus prises en charge. Ouvrez la section de sauvegarde et autorisez l'accès à un dossier via le Storage Access Framework pour continuer à utiliser la sauvegarde automatique. Les fichiers de sauvegarde existants peuvent toujours être restaurés en les important depuis le même dossier."</string>
 </resources>

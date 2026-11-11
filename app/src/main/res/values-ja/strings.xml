@@ -144,7 +144,7 @@
     <string name="hint_import_format">"インポート形式"</string>
     <string name="hint_export_format">"エクスポート形式"</string>
     <string name="hint_import_file">"インポートするファイル"</string>
-    <string name="hint_export_folder">"エクスポート先フォルダ"</string>
+    <string name="hint_export_file">"エクスポート先ファイル"</string>
     <string name="hint_export_optional_columns">"省略可能な列"</string>
     <string name="hint_export_unique_wallet">"複数のウォレットの取引を1つにまとめる"</string>
     <string name="hint_iso_code">"ISOコード"</string>
@@ -280,7 +280,7 @@
     <string name="error_input_missing_description">"説明を入力してください"</string>
     <string name="error_input_missing_format">"ファイル形式を選択してください"</string>
     <string name="error_input_missing_input_file">"入力ファイルを選択してください"</string>
-    <string name="error_input_missing_output_folder">"出力フォルダを選択してください"</string>
+    <string name="error_input_missing_output_file">"出力ファイルを選択してください"</string>
 
     <string name="system_category_transfer">振替</string>
     <string name="system_category_transfer_tax">振替手数料</string>
@@ -340,9 +340,7 @@
     <string name="message_error_backend_recoverable">"接続に問題があります。再試行してください。"</string>
 
     <string name="cover_message_backup_storage_access_framework_title">"このアプリは、ドキュメントプロバイダならどこでも(Nextcloud、Dropbox、端末のファイルシステムなど)バックアップの作成と復元ができます"</string>
-    <string name="cover_message_backup_external_memory_title">"このアプリは、端末の外部ストレージから直接バックアップの作成と復元ができます"</string>
     <string name="cover_message_backup_dropbox_title">"このアプリは、個人のDropboxアカウントからバックアップの作成と復元ができます"</string>
-    <string name="cover_message_backup_external_memory_button">"続行"</string>
     <string name="cover_message_backup_storage_access_framework_button">"続行"</string>
     <string name="cover_message_backup_dropbox_button">"ログイン"</string>
 
@@ -350,7 +348,6 @@
     <string name="empty_message_backup_cover">"バックアップの保存先と取得先のサービスを選択してください"</string>
 
     <string name="title_warning">"警告"</string>
-    <string name="title_request_permission">"権限のリクエスト"</string>
     <string name="title_backup_create">"バックアップを作成"</string>
     <string name="title_backup_creation">"バックアップの作成"</string>
     <string name="title_backup_restore">"バックアップを復元"</string>
@@ -370,9 +367,8 @@
     <string name="message_multiply_currency_decimals">"データベースの金額を新しい小数桁数に合わせて更新する必要があります。この操作には時間がかかることがあります。更新をスキップすることもできますが、その場合変更後の金額は%dで割った値として表示されます。"</string>
     <string name="message_divide_currency_decimals">"データベースの金額を新しい小数桁数に合わせて更新する必要があります。この操作には時間がかかることがあります。更新をスキップすることもできますが、その場合変更後の金額は%d倍の値として表示されます。金額を更新した場合、小数部分の情報の一部が失われます。"</string>
     <string name="message_backend_create_folder">"作成するフォルダの名前を入力してください"</string>
-    <string name="message_permission_required_external_storage">"ファイルの読み書きには外部ストレージへのアクセス権限が必要です。有効にしてください。"</string>
-    <string name="message_permission_required_not_granted">"権限が拒否されました。アプリの設定で有効にしてください。"</string>
     <string name="message_backup_create">"新しいバックアップを作成しますか?この操作は途中で停止できません。必要であれば、バックアップファイルを保護するパスワードを設定できます。"</string>
+    <string name="message_backup_external_memory_removed">"外部ストレージへのバックアップは利用できなくなりました。バックアップ画面でストレージアクセスフレームワークを使用して保存先フォルダを選び直してください。既存のバックアップファイルは同じフォルダからインポートして復元できます。"</string>
     <string name="message_backup_restore_standard">"このバックアップを復元しますか?現在のデータはすべて失われ、操作は途中で停止できません。続行しますか?"</string>
     <string name="message_backup_restore_protected">"このバックアップを復元しますか?現在のデータはすべて失われ、操作は途中で停止できません。このバックアップはパスワードで保護されているため、パスワードを入力して続行してください。"</string>
     <string name="message_backup_restore_legacy">"このバックアップを復元しますか?現在のデータはすべて失われ、操作は途中で停止できません。警告:これは旧形式のバックアップで、インポートに失敗する可能性があります。続行しますか?"</string>
@@ -449,7 +445,6 @@
     <string name="spinner_item_end_date">"終了:   %s"</string>
 
     <string name="service_backup_drop_box">"DropBox"</string>
-    <string name="service_backup_external_memory">"外部ストレージ"</string>
 
     <string name="setting_title_user_interface">"ユーザーインターフェース"</string>
     <string name="setting_title_utility">"ユーティリティ"</string>
