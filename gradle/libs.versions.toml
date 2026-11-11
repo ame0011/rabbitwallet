@@ -40,6 +40,7 @@ opencsv = "4.4"
 osmdroid = "6.1.1"
 patternlockview = "a90b0d4bf"
 pinlockview = "5079b412c7"
+robolectric = "4.17"
 viewpagerIndicator = "1.0.4"
 zip4j = "1.3.2"
 
@@ -85,6 +86,7 @@ opencsv = { module = "com.opencsv:opencsv", version.ref = "opencsv" }
 osmdroid-android = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroid" }
 patternlockview = { module = "com.github.aritraroy.PatternLockView:patternlockview", version.ref = "patternlockview" }
 pinlockview = { module = "com.github.aritraroy:PinLockView", version.ref = "pinlockview" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 viewpager-indicator = { module = "com.github.ronaldsmartin:Material-ViewPagerIndicator", version.ref = "viewpagerIndicator" }
 zip4j = { module = "net.lingala.zip4j:zip4j", version.ref = "zip4j" }
 

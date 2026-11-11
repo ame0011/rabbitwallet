@@ -84,6 +84,22 @@ android {
         baseline = file("lint-baseline.xml")
         checkDependencies = false
     }
+
+    testOptions {
+        unitTests {
+            // Required by Robolectric to load the merged resources (R classes, assets, manifest).
+            isIncludeAndroidResources = true
+            all {
+                // JDK21: Robolectric's AndroidInterceptors need jdk.internal.access,
+                // otherwise reflection fails with IllegalAccessException.
+                it.jvmArgs(
+                    "--add-opens=java.base/jdk.internal.access=ALL-UNNAMED",
+                    "--add-opens=java.base/java.io=ALL-UNNAMED",
+                    "--add-opens=java.base/java.lang=ALL-UNNAMED",
+                )
+            }
+        }
+    }
 }
 
 configurations.all {
@@ -157,6 +173,8 @@ dependencies {
     // test dependencies (local tests)
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.robolectric)
 
     // android test dependencies (on-device tests)
     androidTestImplementation(libs.junit)
