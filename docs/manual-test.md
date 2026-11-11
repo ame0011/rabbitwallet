@@ -11,26 +11,25 @@
 
 ## ベースラインスクリーンショットの保存
 
-デバイス未取得のため自動取得は未実施。**手動実施**のこと。
-修正前後の比較用に、次の手順で画面を保存して `docs/screenshots/baseline/`
-へ置くこと。
+`docs/screenshots/baseline/` に 9 画面分取得済み(2026-11-11、実機 ed15c367 /
+1080x2340 / 日本語ロケール / floss debug バリアント)。
+テストデータはウォレット Cash(¥10,000)と Bank(¥0)、取引・振替・予算を登録した状態。
 
 ```powershell
-mkdir docs\screenshots\baseline
 adb exec-out screencap -p > docs\screenshots\baseline\01_main.png
 ```
 
-| # | 画面 | ファイル名(案) |
-|---|------|----------------|
-| 1 | 起動後メイン(概要) | 01_main.png |
-| 2 | 家計簿一覧 | 02_wallets.png |
+| # | 画面 | ファイル名 |
+|---|------|-----------|
+| 1 | 起動後メイン(概要・日別グラフ) | 01_main.png |
+| 2 | 家計簿一覧(ウォレットを管理) | 02_wallets.png |
 | 3 | 新規取引登録 | 03_new_transaction.png |
-| 4 | 取引一覧(期間) | 04_period_detail.png |
-| 5 | 分類一覧 | 05_categories.png |
+| 4 | 取引一覧(期間詳細・概要タブ) | 04_period_detail.png |
+| 5 | 分類一覧(支出タブ) | 05_categories.png |
 | 6 | 予算 | 06_budgets.png |
-| 7 | 報告/チャート | 07_report.png |
+| 7 | 報告/チャート(概要のレーダーチャート) | 07_report.png |
 | 8 | 設定 | 08_settings.png |
-| 9 | バックアップ一覧 | 09_backup_list.png |
+| 9 | バックアップ一覧(バックアップサービス) | 09_backup_list.png |
 
 ## テスト項目
 
